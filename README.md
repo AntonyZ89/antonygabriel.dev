@@ -1,0 +1,144 @@
+# TODO LIST
+
+- [x] Tela de Login
+- [x] Barra de navegação
+  - [x] Voltar para a tela inicial
+  - [x] Voltar para meu perfil
+  - [x] Aba Comunidades
+  - [x] Aba Amigos
+  - [x] Aba Scraps ( Recados )
+  - [x] Barra de busca
+  - [x] Botão sair
+  - [x] Responsivo
+- [x] Tela Inicial ( Meu Perfil )
+  - [x] Meus amigos ( máximo 9 )
+  - [x] Minhas comunidades ( máximo 9 )
+  - [x] Depoimentos ( máximo 3)
+- [ ] Usuário
+  - [x] Ignorar
+  - [x] Reportar
+  - [x] Adicionar como amigo
+  - [x] Remover como amigo
+  - [x] Contador de visualizações
+    - [x] Desde a data de criação da conta
+    - [x] Semana passada
+    - [x] Ontem
+  - [x] Editar
+    - [x] Aba Geral
+    - [x] Aba Social
+    - [x] Aba Contato
+    - [x] Aba Profissional
+    - [x] Aba Pessoal
+  - [x] Tela de Perfil
+  - [ ] Scraps ( Recados )
+    - [x] Listar
+    - [x] Criar
+    - [x] Excluir
+  - [ ] Fotos
+    - [x] Listar
+    - [ ] Adicionar
+    - [ ] Remover
+  - [ ] Vídeos
+    - [x] Listar
+    - [ ] Adicionar
+    - [ ] Remover
+  - [ ] Tela de Depoimentos
+    - [x] Listagem
+    - [ ] Aceitar
+    - [ ] Rejeitar
+    - [ ] Excluir
+  - [x] Fãs
+  - [ ] Configurações
+    - [ ] Escolher exibir ou esconder a visualização da mensagem
+      TODO informações de cada aba
+    - [ ] Selecionar Temas
+      - Obrigatório escolher ao menos um
+      - [ ] Claro ( Padrão )
+      - [ ] Escuro
+      - [ ] Cor personalizada
+        - [ ] Gradient ( duas cores )
+          - [ ] Escolher a direção do gradient (opcional)
+  - [x] Tela Comunidades
+    - [x] Aba Comunidades do usuário ( Todas )
+    - [x] Aba Comunidades pendendes
+    - [x] Aba Comunidades participantes
+- [x] Sugestão de amigos
+- [ ] Amigos
+  - [x] Listagem de todos os usuários
+  - [x] Listagem de meus amigos
+  - [x] Adicionar
+  - [x] Excluir
+  - [x] Avaliar
+    - [x] ⭐ Sou fã
+    - [x] 🧊 Confiável ( 0 a 3 )
+    - [x] 🙂 Legal ( 0 a 3 )
+    - [x] ❤️ Sexy ( 0 a 3 )
+- [ ] Comunidade
+  - [x] Listagem
+  - [x] Visualizar
+  - [x] Criar
+  - [x] Excluir
+  - [x] Entrar
+    - [x] Solicitar entrada em comunidades privadas
+  - [x] Sair
+  - [ ] Convidar ( Somente os moderadores e comunidades privadas )
+  - [ ] Forum / Tópicos
+    - [x] Visualizar
+    - [x] Listagem
+    - [x] Criar
+    - [x] Excluir
+    - [x] Editar
+    - [x] Responder
+      - [ ] Responder enquete anonimamente
+      - [x] Responder um comentário ( mencionar )
+  - [ ] Enquete
+    - [x] Visualizar
+    - [x] Listagem
+    - [x] Criar
+    - [x] Responder
+      - [ ] anonimamente
+  - [ ] Evento
+    - [x] Listagem ( Todos os membros )
+    - [ ] Participar ( Todos os membros )
+    - [x] Criar ( Somente moderador )
+      - Título
+      - Descrição
+      - Data e Horário
+      - Localização
+        - Mapa Google Maps ( opcional )
+    - [x] Editar ( Somente moderador )
+    - [x] Responder ( Todos os membros )
+    - [x] Excluir ( Somente moderador )
+- [ ] Responsivo ( Em andamento )
+- [x] Copiar estilo de community/id/forum/1 para `poll` e `event`
+- [ ] Remover todos os `TODOs`
+- [ ] Remover todos os `IMPORTANTs`
+- [ ] Remover todos os `FIXMEs`
+- [ ] Remover todos os console.( `logs` | `warnings` | `errors` )
+- [ ] Resolver todos os `eslint-disable`
+- [ ] Revisar todos os headers das páginas
+
+# FUTURE IMPROVEMENTS
+
+- [ ] Socket
+  - [ ] Notificação de solicitação de amizade
+  - [ ] Notificação de solicitação de entrada em comunidade
+  - [ ] Notificação de solicitação de convite para entrar em grupo
+
+- [ ] Chat
+  - [ ] Enviar mensagens para amigos
+  - [ ] Enviar fotos
+  - [ ] Enviar vídeos
+  - [ ] Figurinhas
+  - [ ] Emojis
+  - [ ] Trocar status ( Disponível, Ocupado, Ausente, Invisível )
+  - [ ] Notificar quando visualiza a mensagem
+
+- [ ] Stories ( opcional )
+  - [ ] Adicionar badge "new" na fotos dos usuários quando tiver algum stories novo ( não visualizado )
+  - [ ] Upload de imagem
+  - [ ] Upload de vídeo
+  - [ ] Adicionar texto
+  - [ ] Responder ao stories e criar um chat
+    - [ ] Se o usuário tiver uma conversa existente com o dono da postagem, então apenas adiciona a mensagem de resposta ao stories
+    - [ ] Se o usuário não tiver uma conversa existente com o dono da postagem, então cria uma nova conversa e adiciona a mensagem de resposta ao stories

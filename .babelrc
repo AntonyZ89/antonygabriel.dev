@@ -1,0 +1,61 @@
+{
+  "presets": [
+    [
+      "next/babel"
+    ]
+  ],
+  "plugins": [
+    "babel-plugin-macros",
+    "superjson-next",
+    "babel-plugin-inline-react-svg",
+    [
+      "@babel/plugin-proposal-decorators",
+      {
+        "legacy": true
+      }
+    ],
+    [
+      "babel-plugin-root-import",
+      {
+        "paths": [
+          {
+            "rootPathPrefix": "@assets",
+            "rootPathSuffix": "assets"
+          },
+          {
+            "rootPathPrefix": "@lib",
+            "rootPathSuffix": "src/lib"
+          },
+          {
+            "rootPathPrefix": "@utils",
+            "rootPathSuffix": "src/utils"
+          },
+          {
+            "rootPathPrefix": "@types",
+            "rootPathSuffix": "src/types"
+          },
+          {
+            "rootPathPrefix": "@components",
+            "rootPathSuffix": "src/components"
+          },
+          {
+            "rootPathPrefix": "@pages",
+            "rootPathSuffix": "src/pages"
+          },
+          {
+            "rootPathPrefix": "@theme",
+            "rootPathSuffix": "src/theme"
+          },
+          {
+            "rootPathPrefix": "@mocks",
+            "rootPathSuffix": "src/mocks"
+          },
+          {
+            "rootPathPrefix": "@contexts",
+            "rootPathSuffix": "src/contexts"
+          }
+        ]
+      }
+    ]
+  ]
+}
