@@ -19,18 +19,9 @@ const Footer: React.FC = () => {
           md: theme.fontSizes.sm
         })}
       >
-        <Box>© {currentYear} Orkut</Box>
+        <Box>© {currentYear} AntonyDev</Box>
         <Link href={'#'} fontSize={'inherit'}>
           Sobre
-        </Link>
-        <Link href={'#'} fontSize={'inherit'}>
-          Privacidade
-        </Link>
-        <Link href={'#'} fontSize={'inherit'}>
-          Termos
-        </Link>
-        <Link href={'#'} fontSize={'inherit'}>
-          Contato
         </Link>
         <Box>
           By{' '}
