@@ -14,7 +14,8 @@ const theme = extendTheme({
         bg: mode('#d4dded', '#0e0e10')(props)
       },
       _selection: {
-        bg: 'pink.100'
+        bg: 'gray.700',
+        color: 'white'
       },
       blockquote: {
         borderLeftWidth: 5,
