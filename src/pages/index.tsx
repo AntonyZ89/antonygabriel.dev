@@ -1,73 +1,24 @@
-import { Box, Button, Heading, HStack, Spinner, Tooltip, VStack } from '@chakra-ui/react'
-import { Icon } from '@components'
+import { Box, Heading, HStack, SimpleGrid, Spinner, useConst, VStack } from '@chakra-ui/react'
+import { Experience, NameLogo, Section, SocialButton } from '@components'
+import { technologies } from '@mocks'
 import Head from 'next/head'
 import React from 'react'
 import { FaLinkedinIn } from 'react-icons/fa'
 import { GoMarkGithub } from 'react-icons/go'
 
-const techs = [
-  {
-    name: 'TypeScript',
-    experience: '3 years'
-  },
-  {
-    name: 'JavaScript',
-    experience: '3 years'
-  },
-  {
-    name: 'PHP + Yii2',
-    experience: '3 years'
-  },
-  {
-    name: 'Node',
-    experience: '1 year'
-  },
-  {
-    name: 'NextJS + React',
-    experience: '2 years'
-  },
-  {
-    name: 'React Native',
-    experience: '2 years'
-  },
-  {
-    name: 'Nuxt + VueJS',
-    experience: '1 year'
-  },
-  {
-    name: 'Flutter',
-    experience: '6 months'
-  },
-  {
-    name: 'AWS',
-    experience: '2 years'
-  },
-  {
-    name: 'SASS',
-    experience: '3 years'
-  }
-]
-
-const tests = [
-  {
-    name: 'Cypress',
-    experience: '1 year'
-  },
-  {
-    name: 'Cucumber',
-    experience: '1 year'
-  },
-  {
-    name: 'Jest',
-    experience: '1 year'
-  },
-  {
-    name: 'Codeception',
-    experience: '2 years'
-  }
-]
-
 const Home: React.FC = () => {
+  const age = useConst(() => {
+    const age = new Date().getFullYear() - new Date('1999-08-19').getFullYear()
+
+    return new Date().getMonth() < 8 ? age - 1 : age
+  })
+
+  const profissionalExperience = useConst(() => {
+    const time = new Date().getFullYear() - new Date('2019-06-17').getFullYear()
+
+    return new Date().getMonth() < 6 ? time - 1 : time
+  })
+
   return (
     <>
       <Head>
@@ -75,100 +26,68 @@ const Home: React.FC = () => {
         <meta name={'description'} content={'Portfólio Antony Dev'} />
       </Head>
 
-      <VStack
-        align={'center'}
-        justify={'center'}
-        left={0}
-        top={0}
-        position={'fixed'}
-        h={'full'}
-        w={'full'}
-        spacing={8}
-        p={5}
-      >
-        <Heading size={'3xl'} textShadow={'1px 1px 0px white, 3px 3px 0px black'}>
-          AntonyDev
-        </Heading>
+      <Box>
+        <Section bg={'gray.900'}>
+          <NameLogo />
 
-        <Heading fontWeight={'light'} size={'sm'}>
-          Full Stack Developer | Pleno
-        </Heading>
+          <HStack align={'normal'} top={'70%'} left={'50%'} position={'absolute'} transform={'translate(-50%, -40%)'}>
+            <SocialButton href={'https://github.com/AntonyZ89'} icon={GoMarkGithub} />
+            <SocialButton href={'https://www.linkedin.com/in/antonydev'} icon={FaLinkedinIn} />
+          </HStack>
+        </Section>
 
-        <VStack align={'normal'}>
-          <Heading fontWeight={'light'} size={'sm'}>
-            <HStack align={'normal'} justify={'center'} wrap={'wrap'}>
-              {techs.map(({ name, experience }, index) => (
-                <>
-                  <Tooltip hasArrow label={experience}>
-                    <Box as={'b'} cursor={'pointer'} transition={'all 0.5s'} _hover={{ color: 'blue.600' }}>
-                      {name}
-                    </Box>
-                  </Tooltip>
-                  {index < techs.length - 1 && <span>|</span>}
-                </>
-              ))}
-            </HStack>
-          </Heading>
-
-          {/* <Divider borderColor={'blue.700'}/> */}
-
-          <Heading fontWeight={'light'} size={'sm'}>
-            <HStack align={'normal'} justify={'center'} wrap={'wrap'}>
-              {tests.map(({ name, experience }, index) => (
-                <>
-                  <Tooltip hasArrow label={experience}>
-                    <Box as={'b'} cursor={'pointer'} transition={'all 0.5s'} _hover={{ color: 'green.600' }}>
-                      {name}
-                    </Box>
-                  </Tooltip>
-                  {index < techs.length - 1 && <span>|</span>}
-                </>
-              ))}
-            </HStack>
-          </Heading>
-        </VStack>
-
-        <HStack align={'normal'}>
-          <Button
-            as={'a'}
-            size={'sm'}
-            variant={'solid'}
-            target={'blank'}
-            href={'https://github.com/AntonyZ89'}
-            boxShadow={'1px 1px 0px white, 2px 2px 0px black'}
-            borderRight={'1px solid black'}
-            borderBottom={'1px solid black'}
-            bg={'black'}
-            color={'white'}
-            _hover={{ bg: 'blue.900' }}
+        <Section pt={24} bg={'gray.600'} color={'whiteAlpha.700'}>
+          <VStack
+            align={'center'}
+            position={'absolute'}
+            top={'10px'}
+            left={'50%'}
+            transform={'translateX(-50%)'}
+            p={2}
+            rounded={'md'}
+            w={{ base: '60%', md: '30%' }}
           >
-            <Icon fontSize={'x-large'} as={GoMarkGithub} />
-          </Button>
-          <Button
-            as={'a'}
-            size={'sm'}
-            variant={'solid'}
-            target={'blank'}
-            href={'https://www.linkedin.com/in/antonydev'}
-            boxShadow={'1px 1px 0px white, 2px 2px 0px black'}
-            borderRight={'1px solid black'}
-            borderBottom={'1px solid black'}
-            bg={'black'}
-            color={'white'}
-            _hover={{ bg: 'blue.900' }}
-          >
-            <Icon fontSize={'x-large'} as={FaLinkedinIn} />
-          </Button>
-        </HStack>
+            <Heading fontWeight={'light'} size={'xs'} ml={3}>
+              Resume in progress...
+            </Heading>
 
-        <VStack align={'center'}>
-          <Heading fontWeight={'light'} size={'xs'} ml={3}>
-            Resume in progress...
-          </Heading>
+            <Spinner size={'sm'} />
+          </VStack>
 
-          <Spinner size={'sm'} />
-        </VStack>
-      </VStack>
+          <VStack align={'normal'} spacing={4}>
+            <Heading fontWeight={'light'} size={'md'}>
+              Full Stack Developer | <b>Pleno</b>
+            </Heading>
+
+            <VStack align={'normal'} textAlign={'justify'} alignSelf={'center'} fontSize={'md'}>
+              <Box as={'p'}>
+                Olá! Me chamo Antony, {age} anos, formado em Análise e Desenvolvimento de Sistemas, atuo na área há
+                {' ' + profissionalExperience} anos como desenvolvedor Web e Mobile.
+              </Box>
+              <Box as={'p'}>
+                Iniciei meus estudos em 2017 e na metade do ano de 2019 comecei a trabalhar como desenvolvedor web com PHP e JavaScript. Em
+                2020 tive minha primeira experiência como desenvolvedor mobile com React Native e desde então estou sempre buscando otimizar
+                o desenvolvimento de aplicações estudando tecnologias como React, React Native, TypeScript, Flutter, Node, etc.
+              </Box>
+              <Box as={'p'}>
+                Possuo conhecimento em outras ferramentas como AWS, Google Cloud, Docker, Heroku, Vercel, Netlify, Git, GitHub, GitLab,
+                Bitbucket, Jira, Trello, Slack, ClickUp, etc.
+              </Box>
+              <Box as={'p'}>
+                Em meu tempo livre sempre reservo um pouco de tempo para estudar e aprender novas tecnologias buscando o melhor para minhas
+                aplicações.
+              </Box>
+            </VStack>
+
+            <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} gap={2}>
+              {technologies.map((technology, index) => (
+                <Experience key={index} group={technology} />
+              ))}
+            </SimpleGrid>
+            {/* <Divider borderColor={'blue.700'}/> */}
+          </VStack>
+        </Section>
+      </Box>
     </>
   )
 }

@@ -127,13 +127,7 @@ const Navbar: React.FC = () => {
             </InputLeftElement>
             <Input />
           </InputGroup>
-          <Button
-            px={3}
-            size={'sm'}
-            h={'auto'}
-            alignSelf={'normal'}
-            aria-label={'Buscar por novos amigos e novas comunidades'}
-          >
+          <Button px={3} size={'sm'} h={'auto'} alignSelf={'normal'} aria-label={'Buscar por novos amigos e novas comunidades'}>
             Buscar
           </Button>
         </HStack>

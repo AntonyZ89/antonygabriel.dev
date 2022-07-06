@@ -13,4 +13,15 @@ function toString(date?: string): string {
   })
 }
 
-export default { toString, toDays: date.toDays }
+function now(): string {
+  const instance = new Date()
+
+  const _date = date.now()
+
+  const time =
+    ('0' + instance.getHours()).slice(-2) + ':' + ('0' + instance.getMinutes()).slice(-2) + ':' + ('0' + instance.getSeconds()).slice(-2)
+
+  return _date + 'T' + time
+}
+
+export default { toString, toDays: date.toDays, now }

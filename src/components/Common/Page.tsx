@@ -2,11 +2,10 @@ import { Grid } from '@chakra-ui/react'
 import React from 'react'
 
 interface PageProps {
-  Two: React.FC
-  Three: React.FC
+  children: React.ReactNode
 }
 
-const Two: React.FC = ({ children }) => (
+const Two: React.FC<PageProps> = ({ children }) => (
   <Grid
     gridTemplate={{
       base: '"left" "right" / 100%',
@@ -20,7 +19,7 @@ const Two: React.FC = ({ children }) => (
   </Grid>
 )
 
-const Three: React.FC = ({ children }) => (
+const Three: React.FC<PageProps> = ({ children }) => (
   <Grid
     gridTemplate={{
       base: '"left" "mid" / 100%',
@@ -34,9 +33,4 @@ const Three: React.FC = ({ children }) => (
   </Grid>
 )
 
-const Page: PageProps = () => <></>
-
-Page.Two = Two
-Page.Three = Three
-
-export default Page
+export default { Two, Three }

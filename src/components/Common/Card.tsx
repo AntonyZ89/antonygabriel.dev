@@ -6,7 +6,18 @@ export interface CardProps extends StackProps {
 }
 
 const Card = forwardRef<HTMLDivElement, CardProps>(({ children, ...props }, ref) => (
-  <Stack ref={ref} align={'normal'} direction={'column'} bg={'white'} rounded={'md'} p={3} shadow={'md'} {...props}>
+  <Stack
+    ref={ref}
+    align={'normal'}
+    direction={'column'}
+    bg={'gray.200'}
+    color={'gray.600'}
+    rounded={'md'}
+    p={3}
+    shadow={'md'}
+    overflow={'auto'}
+    {...props}
+  >
     {children}
   </Stack>
 ))

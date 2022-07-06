@@ -3,7 +3,7 @@ import { Button, ButtonProps } from '@chakra-ui/react'
 import LinkBase from 'next/link'
 
 type LinkProps = {
-  children: string | number | React.ReactElement
+  children: string | number
   href: string
   'aria-label'?: string
 }

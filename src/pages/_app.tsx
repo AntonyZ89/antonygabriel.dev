@@ -1,5 +1,5 @@
 import '@assets/main.scss'
-import { ChakraProvider, Container } from '@chakra-ui/react'
+import { ChakraProvider } from '@chakra-ui/react'
 import '@fontsource/poppins'
 import theme from '@theme'
 import { AppProps } from 'next/app'
@@ -20,11 +20,10 @@ const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
         <meta name={'viewport'} content={'width=device-width, initial-scale=1'} />
         <link rel={'shortcut icon'} type={'image/x-icon'} href={'/favicon.ico'} />
       </Head>
-      <Container maxW={'container.xl'} mt={2}>
-        {/* <Navbar /> */}
-        <Component {...pageProps} />
-        {/* <Footer /> */}
-      </Container>
+
+      {/* <Navbar /> */}
+      <Component {...pageProps} />
+      {/* <Footer /> */}
     </ChakraProvider>
   )
 }

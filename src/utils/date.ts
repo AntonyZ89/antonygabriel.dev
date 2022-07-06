@@ -34,7 +34,7 @@ function toDays(date1: string | Date, date2: string | Date = new Date()): string
   }
 
   if (diffMonths) {
-    result += `${result ? ' e ' : ''}${diffMonths} mês${diffMonths > 1 ? 'es' : ''}`
+    result += `${result ? ' e ' : ''}${diffMonths} ${diffMonths > 1 ? 'meses' : 'mês'}`
   }
 
   if (diffYears) {
@@ -48,4 +48,10 @@ function toDays(date1: string | Date, date2: string | Date = new Date()): string
   return result
 }
 
-export default { toString, toDays }
+function now(): string {
+  const instance = new Date()
+
+  return instance.getFullYear() + '-' + ('0' + (instance.getMonth() + 1)).slice(-2) + '-' + ('0' + instance.getDate()).slice(-2)
+}
+
+export default { toString, toDays, now }
