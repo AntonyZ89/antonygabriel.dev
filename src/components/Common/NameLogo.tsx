@@ -53,7 +53,7 @@ const Letter: React.FC<LetterProps> = ({ letter, selectedIndex, index }) => {
       transform={'translateY(20px)'}
       sx={
         (delayed || isSelected) && {
-          textShadow: '-1px -1px 0px var(--chakra-colors-gray-700), 1px 1px 0px white, 3px 3px 0px black',
+          textShadow: '-1px -1px 0px var(--chakra-colors-gray-700), 1px 1px 0px white, 3px 3px 0px white',
           transform: 'translateY(-10px)',
           opacity: 0.3
         }
@@ -104,7 +104,7 @@ const NameLogo: React.FC = () => {
           md: '7rem',
           lg: '10rem'
         })}
-        textShadow={'-1px -1px 0px var(--chakra-colors-gray-700), 1px 1px 0px white, 3px 3px 0px black'}
+        textShadow={'-1px -1px 0px var(--chakra-colors-gray-700), 1px 1px 0px white, 3px 3px 0px currentColor, 4px 4px 0px white'}
       >
         {name.split('').map((letter, index) => (
           <Box

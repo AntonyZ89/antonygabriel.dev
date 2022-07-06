@@ -14,8 +14,8 @@ const Rating: React.FC<RatingProps> = ({ technology }) => {
       <Box lineHeight={2}>Skill Level</Box>
 
       <Slider isReadOnly value={level} min={1} max={5} colorScheme={'teal'} onChange={v => setLevel(v as TechnologyType['level'])}>
-        <SliderTrack h={2} rounded={'lg'} bg={'yellow.200'}>
-          <SliderFilledTrack bg={'yellow.400'} />
+        <SliderTrack h={2} rounded={'lg'} bg={'gray.300'}>
+          <SliderFilledTrack bg={'gray.500'} />
         </SliderTrack>
 
         <SliderThumb boxSize={5} border={'1px solid black'} borderColor={'blackAlpha.300'} bg={'white'} color={'black'}>
