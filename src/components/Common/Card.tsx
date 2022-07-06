@@ -12,6 +12,12 @@ const Card = forwardRef<HTMLDivElement, CardProps>(({ children, ...props }, ref)
     direction={'column'}
     bg={'gray.200'}
     color={'gray.600'}
+    sx={{
+      '& *::selection': {
+        bg: 'gray.300',
+        color: 'currentColor'
+      }
+    }}
     rounded={'md'}
     p={3}
     shadow={'md'}
