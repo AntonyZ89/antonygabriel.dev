@@ -1,6 +1,6 @@
 import { As, Button } from '@chakra-ui/react'
 import React from 'react'
-import Icon from './Icon'
+import { Icon } from '@components'
 
 interface SocialButtonProps {
   icon: As

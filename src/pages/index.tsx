@@ -1,6 +1,5 @@
-import { Box, Heading, HStack, SimpleGrid, Spinner, useConst, VStack } from '@chakra-ui/react'
-import { Experience, NameLogo, Section, SocialButton } from '@components'
-import { technologies } from '@mocks'
+import { Box, Heading, HStack, Spinner, useConst, VStack } from '@chakra-ui/react'
+import { ExperienceCarousel, NameLogo, Section, SocialButton } from '@components'
 import Head from 'next/head'
 import React from 'react'
 import { FaLinkedinIn } from 'react-icons/fa'
@@ -55,7 +54,7 @@ const Home: React.FC = () => {
           </VStack>
 
           <VStack align={'normal'} spacing={4}>
-            <Heading fontWeight={'light'} size={'md'}>
+            <Heading fontWeight={'light'} color={'white'} size={'md'}>
               Full Stack Developer | <b>Pleno</b>
             </Heading>
 
@@ -79,11 +78,8 @@ const Home: React.FC = () => {
               </Box>
             </VStack>
 
-            <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} gap={2}>
-              {technologies.map((technology, index) => (
-                <Experience key={index} group={technology} />
-              ))}
-            </SimpleGrid>
+            <ExperienceCarousel />
+
             {/* <Divider borderColor={'blue.700'}/> */}
           </VStack>
         </Section>

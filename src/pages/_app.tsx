@@ -1,6 +1,8 @@
 import '@assets/main.scss'
-import { ChakraProvider } from '@chakra-ui/react'
 import '@fontsource/poppins'
+import '@splidejs/react-splide/css'
+
+import { ChakraProvider } from '@chakra-ui/react'
 import theme from '@theme'
 import { AppProps } from 'next/app'
 import Head from 'next/head'

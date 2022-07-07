@@ -3,6 +3,7 @@ import { TechnologyGroupType } from '@types'
 export default [
   {
     name: 'Frontend',
+    columns: { base: 1, lg: 2 },
     list: [
       {
         name: 'NextJS',
@@ -28,11 +29,27 @@ export default [
         name: 'SASS',
         experience: '3 anos',
         level: 4
+      },
+      {
+        name: 'LESS',
+        experience: '1 ano',
+        level: 3
+      },
+      {
+        name: 'HTML Semântico',
+        experience: '3 anos',
+        level: 5
+      },
+      {
+        name: 'CSS 3/4',
+        experience: '3 anos',
+        level: 4
       }
     ]
   },
   {
     name: 'Backend',
+    columns: { base: 1, lg: 2 },
     list: [
       {
         name: 'PHP',
@@ -53,6 +70,11 @@ export default [
         name: 'Node',
         experience: '1 ano',
         level: 3
+      },
+      {
+        name: 'Express',
+        experience: '3 meses',
+        level: 2
       },
       {
         name: 'NestJS',
@@ -78,6 +100,11 @@ export default [
         name: 'PHP',
         experience: '3 anos',
         level: 5
+      },
+      {
+        name: 'Python',
+        experience: '2 meses',
+        level: 2
       }
     ]
   },
@@ -153,6 +180,7 @@ export default [
   },
   {
     name: 'Outros',
+    columns: { base: 1, lg: 2 },
     list: [
       {
         name: 'Heroku',
@@ -168,6 +196,21 @@ export default [
         name: 'AWS',
         experience: '2 anos',
         level: 3
+      },
+      {
+        name: 'Docker',
+        experience: '1 ano',
+        level: 3
+      },
+      {
+        name: 'Google Cloud',
+        experience: '2 meses',
+        level: 2
+      },
+      {
+        name: 'Firebase',
+        experience: '3 meses',
+        level: 2
       }
     ]
   }

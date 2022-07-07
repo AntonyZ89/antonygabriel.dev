@@ -1,6 +1,6 @@
 import { Box, Flex, Heading, StatDownArrow, useBreakpointValue, useConst, VStack } from '@chakra-ui/react'
 import React, { useEffect, useMemo, useRef, useState } from 'react'
-import Icon from './Icon'
+import { Icon } from '@components'
 
 interface LetterProps {
   letter: string
@@ -152,7 +152,7 @@ const NameLogo: React.FC = () => {
         opacity={selected ? 0.3 : 0}
         className={'animation-vertical-loop'}
       >
-        <Box color={'white'} fontSize={'xx-large'}>
+        <Box color={'white'} fontSize={{ base: 'large', md: 'xx-large' }}>
           Ver mais
         </Box>
         <Icon as={StatDownArrow} fontSize={'xx-large'} />

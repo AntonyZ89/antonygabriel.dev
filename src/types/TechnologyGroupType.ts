@@ -1,5 +1,6 @@
 export interface TechnologyGroupType {
   name: string
+  columns?: Partial<Record<string, number>>
   list: Array<TechnologyType>
 }
 
