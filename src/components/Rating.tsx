@@ -25,16 +25,6 @@ const Rating: React.FC<RatingProps> = ({ technology }) => {
           />
         )
       })}
-
-      {/* <Slider isReadOnly value={level} min={1} max={5} colorScheme={'teal'} onChange={v => setLevel(v as TechnologyType['level'])}>
-        <SliderTrack h={2} rounded={'lg'} bg={'gray.300'}>
-          <SliderFilledTrack bg={'gray.500'} />
-        </SliderTrack>
-
-        <SliderThumb boxSize={5} border={'1px solid black'} borderColor={'blackAlpha.300'} bg={'white'} color={'black'}>
-          {level}
-        </SliderThumb>
-      </Slider> */}
     </HStack>
   )
 }

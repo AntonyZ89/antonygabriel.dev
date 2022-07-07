@@ -14,7 +14,7 @@ const ExperienceCarousel: React.FC = () => (
       gap: 10,
       perPage: useBreakpointValue({ base: 1, md: 2 }),
       arrows: false,
-      // autoplay: true,
+      autoplay: true,
       interval: 3000,
       wheel: true
     }}
