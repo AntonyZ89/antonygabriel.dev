@@ -1,19 +1,32 @@
-import { Box, HStack, Slider, SliderFilledTrack, SliderThumb, SliderTrack } from '@chakra-ui/react'
+import { Box, Circle, HStack } from '@chakra-ui/react'
 import { TechnologyType } from '@types'
-import React, { useState } from 'react'
+import React from 'react'
 
 interface RatingProps {
   technology: TechnologyType
 }
 
 const Rating: React.FC<RatingProps> = ({ technology }) => {
-  const [level, setLevel] = useState<TechnologyType['level']>(technology.level)
-
   return (
-    <HStack align={'normal'}>
-      <Box lineHeight={2}>Skill Level</Box>
+    <HStack align={'center'}>
+      <Box>Skill Level</Box>
 
-      <Slider isReadOnly value={level} min={1} max={5} colorScheme={'teal'} onChange={v => setLevel(v as TechnologyType['level'])}>
+      {[...Array(5)].map((_, index) => {
+        const isEqual = index + 1 < technology.level
+
+        return (
+          <Circle
+            key={index}
+            size={3}
+            fontSize={'smaller'}
+            fontWeight={'bold'}
+            bg={isEqual ? 'gray.500' : 'gray.300'}
+            color={isEqual ? 'white' : 'gray.400'}
+          />
+        )
+      })}
+
+      {/* <Slider isReadOnly value={level} min={1} max={5} colorScheme={'teal'} onChange={v => setLevel(v as TechnologyType['level'])}>
         <SliderTrack h={2} rounded={'lg'} bg={'gray.300'}>
           <SliderFilledTrack bg={'gray.500'} />
         </SliderTrack>
@@ -21,7 +34,7 @@ const Rating: React.FC<RatingProps> = ({ technology }) => {
         <SliderThumb boxSize={5} border={'1px solid black'} borderColor={'blackAlpha.300'} bg={'white'} color={'black'}>
           {level}
         </SliderThumb>
-      </Slider>
+      </Slider> */}
     </HStack>
   )
 }

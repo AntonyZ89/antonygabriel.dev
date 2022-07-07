@@ -3,7 +3,6 @@ import { TechnologyGroupType } from '@types'
 export default [
   {
     name: 'Frontend',
-    columns: { base: 1, lg: 2 },
     list: [
       {
         name: 'NextJS',
@@ -49,7 +48,6 @@ export default [
   },
   {
     name: 'Backend',
-    columns: { base: 1, lg: 2 },
     list: [
       {
         name: 'PHP',
@@ -180,7 +178,6 @@ export default [
   },
   {
     name: 'Outros',
-    columns: { base: 1, lg: 2 },
     list: [
       {
         name: 'Heroku',
