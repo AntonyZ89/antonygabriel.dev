@@ -14,4 +14,4 @@ const TechnologyItem: React.FC<TechnologyItemProps> = ({ technology: { experienc
   </Tooltip>
 )
 
-export default TechnologyItem
+export { TechnologyItem }

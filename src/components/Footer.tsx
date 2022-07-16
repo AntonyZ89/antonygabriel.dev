@@ -4,7 +4,7 @@ import React, { memo } from 'react'
 
 const currentYear = new Date().getFullYear()
 
-const Footer: React.FC = () => {
+let Footer: React.FC = () => {
   return (
     <Card as={'footer'} display={'block'} my={2} p={1}>
       <Flex
@@ -34,4 +34,6 @@ const Footer: React.FC = () => {
   )
 }
 
-export default memo(Footer)
+Footer = memo(Footer)
+
+export { Footer }

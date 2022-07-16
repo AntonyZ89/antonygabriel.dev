@@ -29,4 +29,4 @@ const Rating: React.FC<RatingProps> = ({ technology }) => {
   )
 }
 
-export default Rating
+export { Rating }

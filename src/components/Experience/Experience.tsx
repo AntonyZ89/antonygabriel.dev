@@ -1,8 +1,7 @@
 import { Heading, SimpleGrid, VStack } from '@chakra-ui/react'
+import { Card, Rating } from '@components'
 import { TechnologyGroupType } from '@types'
 import React from 'react'
-import Card from '../Common/Card'
-import Rating from '../Rating'
 
 interface ExperienceProps {
   group: TechnologyGroupType
@@ -13,6 +12,7 @@ const Experience: React.FC<ExperienceProps> = ({ group: { name, list } }) => (
     <Heading
       size={'md'}
       position={'relative'}
+      textAlign={'center'}
       _after={{
         content: "''",
         position: 'absolute',
@@ -36,15 +36,17 @@ const Experience: React.FC<ExperienceProps> = ({ group: { name, list } }) => (
           templateColumns={'35% 65%'}
           position={'relative'}
           _after={
-            index < list.length - 2 && {
-              content: "''",
-              position: 'absolute',
-              bg: 'gray.300',
-              left: 0,
-              bottom: -1,
-              width: '100%',
-              h: '1px'
-            }
+            index < list.length - 2
+              ? {
+                  content: "''",
+                  position: 'absolute',
+                  bg: 'gray.300',
+                  left: 0,
+                  bottom: -1,
+                  width: '100%',
+                  h: '1px'
+                }
+              : undefined
           }
         >
           <Heading wordBreak={'initial'} fontSize={'sm'} transition={'all 0.5s'}>

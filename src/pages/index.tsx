@@ -1,5 +1,5 @@
 import { Box, Heading, HStack, Spinner, useConst, VStack } from '@chakra-ui/react'
-import { ExperienceCarousel, NameLogo, Section, SocialButton } from '@components'
+import { ExperienceCarousel, MyProjects, NameLogo, Section, SocialButton } from '@components'
 import Head from 'next/head'
 import React from 'react'
 import { FaLinkedinIn } from 'react-icons/fa'
@@ -79,9 +79,11 @@ const Home: React.FC = () => {
             </VStack>
 
             <ExperienceCarousel />
-
-            {/* <Divider borderColor={'blue.700'}/> */}
           </VStack>
+        </Section>
+
+        <Section bg={'purple.900'} color={'whiteAlpha.700'}>
+          <MyProjects />
         </Section>
       </Box>
     </>

@@ -1,6 +1,7 @@
 import { extendTheme, ThemeConfig } from '@chakra-ui/react'
-import { mode } from '@chakra-ui/theme-tools'
+import { mode, StyleFunctionProps } from '@chakra-ui/theme-tools'
 import { Box, Button, Checkbox, Input, Radio, Select, Table, Tabs, Textarea } from '@theme/components'
+import style from '@theme/style'
 
 const theme = extendTheme({
   fonts: {
@@ -8,7 +9,8 @@ const theme = extendTheme({
     heading: 'inherit'
   },
   styles: {
-    global: props => ({
+    global: (props: StyleFunctionProps) => ({
+      ...style,
       body: {
         fontSize: props.theme.fontSizes.xs,
         bg: mode('#d4dded', '#0e0e10')(props)

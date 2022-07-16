@@ -17,8 +17,8 @@ const rainbow = ['red.500', 'orange.500', 'yellow.500', 'green.500', 'blue.500',
  * ( 700 - 300ms que é o tempo que leva para remover a letra selecionada na linha 104)
  */
 const Letter: React.FC<LetterProps> = ({ letter, selectedIndex, index }) => {
-  const firstLoadRef = useRef(false)
-  const debounce = useRef(null)
+  const firstLoadRef = useRef<boolean>(false)
+  const debounce = useRef<NodeJS.Timeout | undefined>()
   const [isSelected, setIsSelected] = useState(false)
   const [delayed, setDelayed] = useState(false)
 
@@ -52,14 +52,16 @@ const Letter: React.FC<LetterProps> = ({ letter, selectedIndex, index }) => {
       opacity={0}
       transform={'translateY(20px)'}
       sx={
-        (delayed || isSelected) && {
-          textShadow: {
-            base: '-1px -1px 0px var(--chakra-colors-gray-700), 1px 1px 0px white',
-            md: '-1px -1px 0px var(--chakra-colors-gray-700), 1px 1px 0px white, 3px 3px 0px white'
-          },
-          transform: 'translateY(-10px)',
-          opacity: 0.3
-        }
+        delayed || isSelected
+          ? {
+              textShadow: {
+                base: '-1px -1px 0px var(--chakra-colors-gray-700), 1px 1px 0px white',
+                md: '-1px -1px 0px var(--chakra-colors-gray-700), 1px 1px 0px white, 3px 3px 0px white'
+              },
+              transform: 'translateY(-10px)',
+              opacity: 0.3
+            }
+          : undefined
       }
     >
       {letter === ' ' ? '\u00A0' : letter}
@@ -71,9 +73,9 @@ const NameLogo: React.FC = () => {
   const name = useConst('AntonyDev')
   const subtitle = useConst('Full Stack Developer')
 
-  const [selected, setSelected] = useState<number>(null)
+  const [selected, setSelected] = useState<number>()
   const equivalentSubtitleSelected: number | null = useMemo(() => {
-    if (selected !== null) {
+    if (selected !== undefined) {
       const equivalentPercent = selected / name.length
 
       return Math.ceil(equivalentPercent * subtitle.length)
@@ -90,7 +92,7 @@ const NameLogo: React.FC = () => {
         setTimeout(() => setSelected(index), index * delay)
       })
 
-      setTimeout(() => setSelected(null), name.length * delay)
+      setTimeout(() => setSelected(undefined), name.length * delay)
     }, 500)
   }, [])
 
@@ -119,7 +121,7 @@ const NameLogo: React.FC = () => {
             transition={'all 0.3s'}
             className={selected === index ? 'rainbow' : ''}
             onMouseEnter={() => setSelected(index)}
-            onMouseLeave={() => setTimeout(() => setSelected(selected => (selected === index ? null : selected)), 300)}
+            onMouseLeave={() => setTimeout(() => setSelected(selected => (selected === index ? undefined : selected)), 300)}
             sx={{
               '&.rainbow': { transform: 'translateY(-20px)', color: rainbow[index % rainbow.length] }
             }}
@@ -161,4 +163,4 @@ const NameLogo: React.FC = () => {
   )
 }
 
-export default NameLogo
+export { NameLogo }

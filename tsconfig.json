@@ -9,7 +9,8 @@
     "downlevelIteration": true,
     "allowJs": true,
     "skipLibCheck": true,
-    "strict": false,
+    "strictNullChecks": true,
+    "strict": true,
     "forceConsistentCasingInFileNames": true,
     "noEmit": true,
     "esModuleInterop": true,
@@ -22,33 +23,16 @@
     "baseUrl": "./src",
     /* A series of entries which re-map imports to lookup locations relative to the 'baseUrl'. */
     "paths": {
-      "@lib": [
-        "lib"
-      ],
-      "@assets": [
-        "../assets"
-      ],
-      "@utils": [
-        "utils"
-      ],
-      "@types": [
-        "types"
-      ],
-      "@components": [
-        "components"
-      ],
-      "@pages": [
-        "pages"
-      ],
-      "@theme": [
-        "theme"
-      ],
-      "@theme/*": [
-        "theme/*"
-      ],
-      "@mocks": [
-        "mocks"
-      ],
+      "@lib": ["lib"],
+      "@assets": ["../assets"],
+      "@utils": ["utils"],
+      "@types": ["types"],
+      "@enum": ["enum"],
+      "@components": ["components"],
+      "@pages": ["pages"],
+      "@theme": ["theme"],
+      "@theme/*": ["theme/*"],
+      "@mocks": ["mocks"],
       "@contexts": [
         "contexts"
       ]

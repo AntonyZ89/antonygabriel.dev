@@ -1,13 +1,13 @@
-import { As, Button } from '@chakra-ui/react'
-import React from 'react'
+import { As, Button, ButtonProps } from '@chakra-ui/react'
 import { Icon } from '@components'
+import React from 'react'
 
-interface SocialButtonProps {
+interface SocialButtonProps extends ButtonProps {
   icon: As
   href: string
 }
 
-const SocialButton: React.FC<SocialButtonProps> = ({ icon, href }) => (
+const SocialButton: React.FC<SocialButtonProps> = ({ icon, href, ...props }) => (
   <Button
     as={'a'}
     size={'lg'}
@@ -20,9 +20,10 @@ const SocialButton: React.FC<SocialButtonProps> = ({ icon, href }) => (
     bg={'black'}
     color={'white'}
     _hover={{ bg: 'blue.900' }}
+    {...props}
   >
     <Icon fontSize={'xx-large'} as={icon} />
   </Button>
 )
 
-export default SocialButton
+export { SocialButton }

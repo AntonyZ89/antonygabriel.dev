@@ -1,4 +1,3 @@
-import Card from './Card'
 import CKEditor from './CKEditor'
 import Experience from '../Experience/Experience'
 import Icon from './Icon'
@@ -7,4 +6,4 @@ import Page from './Page'
 
 export * from './Card'
 
-export { Card, CKEditor, Experience, Icon, Link, Page }
+export { CKEditor, Experience, Icon, Link, Page }

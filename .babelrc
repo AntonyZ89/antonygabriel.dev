@@ -35,6 +35,10 @@
             "rootPathSuffix": "src/types"
           },
           {
+            "rootPathPrefix": "@enum",
+            "rootPathSuffix": "src/enum"
+          },
+          {
             "rootPathPrefix": "@components",
             "rootPathSuffix": "src/components"
           },
