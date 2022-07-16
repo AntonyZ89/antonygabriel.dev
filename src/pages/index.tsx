@@ -54,7 +54,7 @@ const Home: React.FC = () => {
           </VStack>
 
           <VStack align={'normal'} spacing={4}>
-            <Heading fontWeight={'light'} color={'white'} size={'md'}>
+            <Heading fontWeight={'light'} color={'white'} size={'md'} textAlign={'center'}>
               Full Stack Developer | <b>Pleno</b>
             </Heading>
 

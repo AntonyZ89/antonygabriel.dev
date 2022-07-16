@@ -33,9 +33,7 @@
       "@theme": ["theme"],
       "@theme/*": ["theme/*"],
       "@mocks": ["mocks"],
-      "@contexts": [
-        "contexts"
-      ]
+      "@contexts": ["contexts"]
     },
     "incremental": true
   },

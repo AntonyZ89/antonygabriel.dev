@@ -34,7 +34,14 @@ const theme = extendTheme({
         }
       },
       a: {
-        color: 'blue.600'
+        color: 'blue.500',
+        borderBottom: '1px dashed currentColor',
+        transition: 'all 0.3s',
+        _hover: {
+          '&.::not(.chakra-button)': {
+            color: 'blue.400'
+          }
+        }
       },
       'p, h1, h2, h3, h4, h5, h6': {
         wordBreak: 'break-word'

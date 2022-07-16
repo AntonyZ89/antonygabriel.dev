@@ -13,7 +13,7 @@ interface MyProjectBaseBodyProps extends StackProps {
  */
 
 const MyProjectBaseBody: React.FC<MyProjectBaseBodyProps> = ({ children, ...props }) => (
-  <VStack flex={0.2} align={'normal'} px={2} overflow={'auto'} {...props}>
+  <VStack flex={0.2} align={'normal'} textAlign={'justify'} px={2} overflow={'auto'} {...props}>
     {children}
   </VStack>
 )

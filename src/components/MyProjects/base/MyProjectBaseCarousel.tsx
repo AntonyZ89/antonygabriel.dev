@@ -18,7 +18,7 @@ const MyProjectBaseCarousel: React.FC<MyProjectBaseCarouselProps> = ({ images })
         gap: 10,
         perPage: 1,
         arrows: false,
-        // autoplay: true,
+        preloadPages: 3,
         interval: 3000,
         wheel: true
       }}

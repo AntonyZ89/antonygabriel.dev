@@ -12,8 +12,8 @@ interface MyProjectsBaseProps {
 const MyProjectsBase: React.FC<MyProjectsBaseProps> = ({ children, tags }) => (
   <Card p={0} h={'full'}>
     {children}
-    <HStack bg={'blue.100'} align={'normal'} wrap={'wrap'} p={2} spacing={1} h={'32px'}>
-      {tags.map(tag => (
+    <HStack bg={'gray.900'} align={'normal'} wrap={'wrap'} p={2} spacing={1} h={'32px'}>
+      {tags.sort().map(tag => (
         <Tag
           key={tag}
           px={2}
@@ -23,6 +23,7 @@ const MyProjectsBase: React.FC<MyProjectsBaseProps> = ({ children, tags }) => (
           fontWeight={'bold'}
           bg={getTagColor(tag)}
           color={color.getContrastYIQ(getTagColor(tag) as string)}
+          borderBottom={'1px dotted white'}
         >
           {tag}
         </Tag>

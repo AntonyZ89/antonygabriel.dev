@@ -43,6 +43,11 @@ export default [
         name: 'CSS 3/4',
         experience: '3 anos',
         level: 4
+      },
+      {
+        name: 'Bootstrap 3/4/5',
+        experience: '3 anos',
+        level: 4
       }
     ]
   },
