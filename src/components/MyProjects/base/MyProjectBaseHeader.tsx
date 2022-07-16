@@ -40,14 +40,14 @@ const Repository: React.FC<{ repository: string }> = ({ repository }) => (
   <BaseButton
     aria-label={'Abrir Repositório'}
     as={'a'}
-    target={'blank'}
+    target={'_blank'}
     href={`https://github.com/AntonyZ89/${repository}`}
     icon={GoMarkGithub}
   />
 )
 
 const Website: React.FC<{ website: string }> = ({ website }) => (
-  <BaseButton aria-label={'Abrir Website'} as={'a'} target={'blank'} href={website} icon={FaGlobeAmericas} />
+  <BaseButton aria-label={'Abrir Website'} as={'a'} target={'_blank'} href={website} icon={FaGlobeAmericas} />
 )
 
 const MyProjectBaseHeader: React.FC<MyProjectBaseHeaderProps> = ({ repository, website, children }) => (

@@ -28,7 +28,9 @@ const Highlight: React.FC<BoxProps & { code?: boolean }> = ({ children, code, ..
 const MyProjectsPHPVanilla: React.FC = () => (
   <Box>
     <MyProjectsBase tags={[TagEnum.PHP, TagEnum.PHPUnit, TagEnum.HTML, TagEnum.CSS, TagEnum.Bootstrap]}>
-      <MyProjectBaseHeader repository={'vanilla-php-mvc'}>MVC - PHP Puro</MyProjectBaseHeader>
+      <MyProjectBaseHeader website={'https://devedor.in-development.tk'} repository={'vanilla-php-mvc'}>
+        MVC - PHP Puro
+      </MyProjectBaseHeader>
 
       <MyProjectBaseBody flex={1}>
         <Box as={'p'} textAlign={'center'}>

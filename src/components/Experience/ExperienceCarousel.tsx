@@ -6,7 +6,6 @@ import Experience from './Experience'
 
 const ExperienceCarousel: React.FC = () => (
   <Splide
-    aria-label={'My Favorite Images'}
     options={{
       rewind: true,
       rewindSpeed: 1500,

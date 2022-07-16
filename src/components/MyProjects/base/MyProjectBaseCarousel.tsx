@@ -9,7 +9,6 @@ interface MyProjectBaseCarouselProps {
 const MyProjectBaseCarousel: React.FC<MyProjectBaseCarouselProps> = ({ images }) => (
   <VStack align={'normal'} flex={0.8}>
     <Splide
-      aria-label={'My Favorite Images'}
       className={'my-project-carousel'}
       options={{
         rewind: true,
@@ -32,7 +31,7 @@ const MyProjectBaseCarousel: React.FC<MyProjectBaseCarouselProps> = ({ images })
       ))}
     </Splide>
 
-    <Divider bg={'gray.700'} />
+    <Divider borderColor={'gray.400'} />
   </VStack>
 )
 
