@@ -20,7 +20,14 @@ const MyProjectsBookStore: React.FC = () => (
 
       <MyProjectBaseCarousel images={images} />
       <MyProjectBaseBody>
-        <p>TODO</p>
+        <Box as={'p'} textAlign={'center'}>
+          Aplicativo de venda de livros
+        </Box>
+
+        <p>
+          Aplicativo desenvolvido com React Native utilizando os componentes da biblioteca Magnus UI, TypeScript e ContextUI para gerenciar
+          os itens no carrinho
+        </p>
       </MyProjectBaseBody>
     </MyProjectsBase>
   </Box>
