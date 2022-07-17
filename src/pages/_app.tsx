@@ -9,13 +9,6 @@ import Head from 'next/head'
 import React from 'react'
 
 const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
-  // const location = useRouter()
-  // const [showNavbar, setShowNavbar] = useState(false)
-
-  // useEffect(() => {
-  //   setShowNavbar(!['/signup', '/'].includes(location.pathname))
-  // }, [location.pathname])
-
   return (
     <ChakraProvider resetCSS={true} theme={theme}>
       <Head>
@@ -23,7 +16,6 @@ const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
         <link rel={'shortcut icon'} type={'image/x-icon'} href={'/favicon.ico'} />
       </Head>
 
-      {/* <Navbar /> */}
       <Component {...pageProps} />
       {/* <Footer /> */}
     </ChakraProvider>
