@@ -15,9 +15,10 @@ const images = [
 
 const MyProjectsOrkut: React.FC = () => (
   <Box>
-    <MyProjectsBase tags={[TagEnum.ReactJS, TagEnum.NextJS, TagEnum.TypeScript, TagEnum.SASS]}>
-      <MyProjectBaseHeader website={'orkut.in-development.tk'}>Orkut</MyProjectBaseHeader>
-
+    <MyProjectsBase
+      header={<MyProjectBaseHeader website={'orkut.in-development.tk'}>Orkut</MyProjectBaseHeader>}
+      tags={[TagEnum.ReactJS, TagEnum.NextJS, TagEnum.TypeScript, TagEnum.SASS]}
+    >
       <MyProjectBaseCarousel images={images} />
       <MyProjectBaseBody>
         <Box as={'p'} textAlign={'center'}>

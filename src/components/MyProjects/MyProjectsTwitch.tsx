@@ -9,9 +9,10 @@ const images = [BASE_URL + 'Home.png', BASE_URL + 'Following.png', BASE_URL + 'B
 
 const MyProjectsTwitch: React.FC = () => (
   <Box>
-    <MyProjectsBase tags={[TagEnum.ReactJS, TagEnum.NextJS, TagEnum.TypeScript, TagEnum.SASS]}>
-      <MyProjectBaseHeader website={'https://twitch-ui-clone.vercel.app'}>Twitch</MyProjectBaseHeader>
-
+    <MyProjectsBase
+      header={<MyProjectBaseHeader website={'https://twitch-ui-clone.vercel.app'}>Twitch</MyProjectBaseHeader>}
+      tags={[TagEnum.ReactJS, TagEnum.NextJS, TagEnum.TypeScript, TagEnum.SASS]}
+    >
       <MyProjectBaseCarousel images={images} />
       <MyProjectBaseBody>
         <Box as={'p'} textAlign={'center'}>

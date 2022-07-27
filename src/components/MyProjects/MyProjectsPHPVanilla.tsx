@@ -27,11 +27,14 @@ const Highlight: React.FC<BoxProps & { code?: boolean }> = ({ children, code, ..
 
 const MyProjectsPHPVanilla: React.FC = () => (
   <Box>
-    <MyProjectsBase tags={[TagEnum.PHP, TagEnum.PHPUnit, TagEnum.HTML, TagEnum.CSS, TagEnum.Bootstrap]}>
-      <MyProjectBaseHeader website={'https://devedor.in-development.tk'} repository={'vanilla-php-mvc'}>
-        MVC - PHP Puro
-      </MyProjectBaseHeader>
-
+    <MyProjectsBase
+      header={
+        <MyProjectBaseHeader website={'https://devedor.in-development.tk'} repository={'vanilla-php-mvc'}>
+          MVC - PHP Puro
+        </MyProjectBaseHeader>
+      }
+      tags={[TagEnum.PHP, TagEnum.PHPUnit, TagEnum.HTML, TagEnum.CSS, TagEnum.Bootstrap]}
+    >
       <MyProjectBaseBody flex={1}>
         <Box as={'p'} textAlign={'center'}>
           MVC com PHP puro inspirado no <a href={'https://www.yiiframework.com/'}>Framework Yii2</a>.

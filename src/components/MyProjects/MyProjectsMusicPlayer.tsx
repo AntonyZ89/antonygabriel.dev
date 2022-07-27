@@ -15,9 +15,10 @@ const images = [
 
 const MyProjectsMusicPlayer: React.FC = () => (
   <Box>
-    <MyProjectsBase tags={[TagEnum.ReactNative, TagEnum.JavaScript, TagEnum.TypeScript]}>
-      <MyProjectBaseHeader repository={'Music-Player-App'}>Music Player</MyProjectBaseHeader>
-
+    <MyProjectsBase
+      header={<MyProjectBaseHeader repository={'Music-Player-App'}>Music Player</MyProjectBaseHeader>}
+      tags={[TagEnum.ReactNative, TagEnum.JavaScript, TagEnum.TypeScript]}
+    >
       <MyProjectBaseCarousel images={images} />
       <MyProjectBaseBody>
         <Box as={'p'} textAlign={'center'}>

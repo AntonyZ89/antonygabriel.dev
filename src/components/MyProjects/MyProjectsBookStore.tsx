@@ -15,9 +15,10 @@ const images = [
 
 const MyProjectsBookStore: React.FC = () => (
   <Box>
-    <MyProjectsBase tags={[TagEnum.ReactNative, TagEnum.TypeScript, TagEnum.JavaScript]}>
-      <MyProjectBaseHeader repository={'book-store-app'}>Book Store</MyProjectBaseHeader>
-
+    <MyProjectsBase
+      header={<MyProjectBaseHeader repository={'book-store-app'}>Book Store</MyProjectBaseHeader>}
+      tags={[TagEnum.ReactNative, TagEnum.TypeScript, TagEnum.JavaScript]}
+    >
       <MyProjectBaseCarousel images={images} />
       <MyProjectBaseBody>
         <Box as={'p'} textAlign={'center'}>
