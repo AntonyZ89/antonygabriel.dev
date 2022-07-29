@@ -1,6 +1,6 @@
 import '@assets/main.scss'
 import '@fontsource/poppins'
-import '@splidejs/react-splide/css'
+import '@splidejs/react-splide/css/sea-green'
 
 import { ChakraProvider } from '@chakra-ui/react'
 import theme from '@theme'

@@ -7,7 +7,7 @@ interface SectionProps extends StackProps {
 
 const Section: React.FC<SectionProps> = ({ children, bg, ...props }) => (
   <Box {...{ bg }}>
-    <Container display={'flex'} maxW={'container.xl'} minH={'100vh'} position={'relative'} py={4} {...props}>
+    <Container display={'flex'} maxW={'container.xl'} h={'100vh'} maxHeight={'container.xl'} position={'relative'} py={4} {...props}>
       {children}
     </Container>
   </Box>

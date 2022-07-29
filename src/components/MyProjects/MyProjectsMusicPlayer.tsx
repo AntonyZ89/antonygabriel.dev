@@ -14,24 +14,22 @@ const images = [
 ]
 
 const MyProjectsMusicPlayer: React.FC = () => (
-  <Box>
-    <MyProjectsBase
-      header={<MyProjectBaseHeader repository={'Music-Player-App'}>Music Player</MyProjectBaseHeader>}
-      tags={[TagEnum.ReactNative, TagEnum.JavaScript, TagEnum.TypeScript]}
-    >
-      <MyProjectBaseCarousel images={images} />
-      <MyProjectBaseBody>
-        <Box as={'p'} textAlign={'center'}>
-          Clone da interface do aplicativo <a href={'https://100pilabs.com'}>Pi Player</a>.{' '}
-        </Box>
-        <p>
-          Aplicativo feito com o intuito de estudar o React Native e testar a biblioteca UI Framework{' '}
-          <a href={'https://callstack.github.io/react-native-paper/'}>React Native Paper</a> com o objetivo de encontrar a melhor opção para
-          desenvolver aplicativos de maneira rápida e eficiente.
-        </p>
-      </MyProjectBaseBody>
-    </MyProjectsBase>
-  </Box>
+  <MyProjectsBase
+    header={<MyProjectBaseHeader repository={'Music-Player-App'}>Music Player</MyProjectBaseHeader>}
+    tags={[TagEnum.ReactNative, TagEnum.JavaScript, TagEnum.TypeScript]}
+  >
+    <MyProjectBaseCarousel images={images} />
+    <MyProjectBaseBody>
+      <Box as={'p'} textAlign={'center'}>
+        Clone da interface do aplicativo <a href={'https://100pilabs.com'}>Pi Player</a>.{' '}
+      </Box>
+      <p>
+        Aplicativo feito com o intuito de estudar o React Native e testar a biblioteca UI Framework{' '}
+        <a href={'https://callstack.github.io/react-native-paper/'}>React Native Paper</a> com o objetivo de encontrar a melhor opção para
+        desenvolver aplicativos de maneira rápida e eficiente.
+      </p>
+    </MyProjectBaseBody>
+  </MyProjectsBase>
 )
 
 export default MyProjectsMusicPlayer

@@ -14,24 +14,22 @@ const images = [
 ]
 
 const MyProjectsBookStore: React.FC = () => (
-  <Box>
-    <MyProjectsBase
-      header={<MyProjectBaseHeader repository={'book-store-app'}>Book Store</MyProjectBaseHeader>}
-      tags={[TagEnum.ReactNative, TagEnum.TypeScript, TagEnum.JavaScript]}
-    >
-      <MyProjectBaseCarousel images={images} />
-      <MyProjectBaseBody>
-        <Box as={'p'} textAlign={'center'}>
-          Aplicativo de venda de livros
-        </Box>
+  <MyProjectsBase
+    header={<MyProjectBaseHeader repository={'book-store-app'}>Book Store</MyProjectBaseHeader>}
+    tags={[TagEnum.ReactNative, TagEnum.TypeScript, TagEnum.JavaScript]}
+  >
+    <MyProjectBaseCarousel images={images} />
+    <MyProjectBaseBody>
+      <Box as={'p'} textAlign={'center'}>
+        Aplicativo de venda de livros
+      </Box>
 
-        <p>
-          Aplicativo desenvolvido com React Native utilizando os componentes da biblioteca Magnus UI, TypeScript e ContextUI para gerenciar
-          os itens no carrinho
-        </p>
-      </MyProjectBaseBody>
-    </MyProjectsBase>
-  </Box>
+      <p>
+        Aplicativo desenvolvido com React Native utilizando os componentes da biblioteca Magnus UI, TypeScript e ContextUI para gerenciar os
+        itens no carrinho
+      </p>
+    </MyProjectBaseBody>
+  </MyProjectsBase>
 )
 
 export default MyProjectsBookStore

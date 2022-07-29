@@ -10,7 +10,7 @@ const images = [
   BASE_URL + 'ColorPicker.gif',
   BASE_URL + 'HomeScreen.png',
   BASE_URL + 'NoteListScreen.png',
-  BASE_URL + 'NoteScreen.png'
+  BASE_URL + 'NoteScreen.gif'
 ]
 
 const MyProjectsNotePad: React.FC = () => (

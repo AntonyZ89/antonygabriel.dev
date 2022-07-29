@@ -5,15 +5,10 @@ interface MyProjectBaseBodyProps extends StackProps {
   children: React.ReactNode
 }
 
-/**
- * TODO
- *
- * trocar [[overflow: auto]]  por [[overflow: hidden]] e expandir descrição com um botão na parte inferior quando o
- * conteúdo exceder o limite do espaço
- */
+// TODO se o scroll for nesa área, o scroll do carousel (splide) deve ser cancelado (stopPropagation provavelmente)
 
 const MyProjectBaseBody: React.FC<MyProjectBaseBodyProps> = ({ children, ...props }) => (
-  <VStack flex={0.5} align={'normal'} textAlign={'justify'} px={2} overflow={'auto'} pt={2} {...props}>
+  <VStack flex={1} align={'normal'} textAlign={'justify'} px={2} overflow={'auto'} pt={2} {...props}>
     {children}
   </VStack>
 )
