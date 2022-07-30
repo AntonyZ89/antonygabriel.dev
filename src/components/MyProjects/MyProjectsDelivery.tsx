@@ -23,7 +23,7 @@ const MyProjectsDelivery: React.FC = () => (
     }
     tags={tags}
   >
-    <SimpleGrid columns={{ base: 1, md: 2 }} autoRows={{ base: '0.5fr', md: '1fr' }} overflow={'hidden'}>
+    <SimpleGrid columns={{ base: 1, md: 2 }} h={'full'} autoRows={{ base: '0.5fr', md: '1fr' }} overflow={'hidden'}>
       <MyProjectBaseCarousel images={images} />
       <MyProjectBaseBody>
         <Box as={'p'} textAlign={'center'}>
@@ -47,14 +47,7 @@ const MyProjectsDelivery: React.FC = () => (
         */}
 
         <p>
-          <Box
-            as={'ul'}
-            sx={{
-              '> li': {
-                marginBottom: 2
-              }
-            }}
-          >
+          <Box as={'ul'} sx={{ '> li': { mb: 2 } }}>
             <li>
               <strong>Home</strong> - Tela inicial do aplicativo, listando os produtos disponíveis para compra, com opção de filtrar por
               nome e categoria.
