@@ -3,6 +3,8 @@ import { TagEnum } from '@enum'
 import React from 'react'
 import { MyProjectBaseBody, MyProjectBaseHeader, MyProjectsBase } from './base'
 
+const tags = [TagEnum.PHP, TagEnum.PHPUnit, TagEnum.HTML, TagEnum.CSS, TagEnum.Bootstrap, TagEnum.MySQL]
+
 const Highlight: React.FC<BoxProps & { code?: boolean }> = ({ children, code, ...props }) => (
   <Box
     as={'span'}
@@ -32,9 +34,9 @@ const MyProjectsPHPVanilla: React.FC = () => (
         MVC - PHP Puro
       </MyProjectBaseHeader>
     }
-    tags={[TagEnum.PHP, TagEnum.PHPUnit, TagEnum.HTML, TagEnum.CSS, TagEnum.Bootstrap, TagEnum.MySQL]}
+    tags={tags}
   >
-    <MyProjectBaseBody>
+    <MyProjectBaseBody h={'full'}>
       <Box as={'p'} textAlign={'center'}>
         MVC com PHP puro inspirado no <a href={'https://www.yiiframework.com/'}>Framework Yii2</a>.
       </Box>

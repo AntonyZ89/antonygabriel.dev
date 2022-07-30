@@ -6,14 +6,12 @@ interface MyProjectBaseCarouselProps {
   images: Array<string>
 }
 
-// TODO se o scroll for nessa área, o scroll do carousel (splide)  pai deve ser cancelado (stopPropagation provavelmente)
-
 const MyProjectBaseCarousel: React.FC<MyProjectBaseCarouselProps> = ({ images }) => {
   const direction = useBreakpointValue<StackDirection>({ base: 'column', md: 'row' })
 
   return (
-    <Flex direction={direction} align={'normal'} flex={1}>
-      <Box p={2} flex={1}>
+    <Flex direction={direction} align={'normal'}>
+      <Box p={2} pb={{ base: 0, sm: 2 }} flex={1}>
         <Splide
           className={'my-project-carousel my-project-carousel__inner'}
           options={{

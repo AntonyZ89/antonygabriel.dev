@@ -51,15 +51,7 @@ const Website: React.FC<{ website: string }> = ({ website }) => (
 )
 
 const MyProjectBaseHeader: React.FC<MyProjectBaseHeaderProps> = ({ repository, website, children }) => (
-  <Flex
-    justify={'center'}
-    direction={'column'}
-    bg={'tomato'}
-    py={0}
-    color={'white'}
-    h={{ base: '45px', sm: '60px', md: '45px' }}
-    position={'relative'}
-  >
+  <Flex justify={'center'} direction={'column'} bg={'tomato'} py={0} color={'white'} h={'50px'} position={'relative'}>
     <Heading size={'sm'} fontWeight={'normal'} textAlign={'center'} position={'relative'}>
       {children}
     </Heading>

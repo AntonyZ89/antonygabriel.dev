@@ -1,8 +1,8 @@
 export enum TagEnum {
   NextJS = 'NextJS',
   ReactJS = 'ReactJS',
-  // NuxtJS = 'NuxtJS',
-  // VueJS = 'VueJS',
+  NuxtJS = 'NuxtJS',
+  VueJS = 'VueJS',
   SASS = 'SASS',
   // LESS = 'LESS',
   HTML = 'HTML',
@@ -10,7 +10,7 @@ export enum TagEnum {
   Bootstrap = 'Bootstrap',
 
   PHP = 'PHP',
-  // Yii2 = 'Yii2',
+  Yii2 = 'Yii2',
   // Laravel = 'Laravel',
   // NodeJS = 'NodeJS',
   // ExpressJS = 'ExpressJS',

@@ -1,5 +1,6 @@
-import { Box, Heading, HStack, useConst } from '@chakra-ui/react'
+import { Box, Heading, HStack } from '@chakra-ui/react'
 import { Card, Tag } from '@components'
+import { useProject } from '@contexts'
 import { TagEnum } from '@enum'
 import { Splide } from '@splidejs/react-splide'
 import React, { useEffect, useRef, useState } from 'react'
@@ -17,23 +18,43 @@ const MyProjects: React.FC = () => {
   const [loaded, setLoaded] = useState(false)
   const [current, setCurrent] = useState(1)
   const [total, setTotal] = useState(0)
-  const filters = useConst(Object.values(TagEnum).sort())
-  const [selected, setSelected] = useState<Array<TagEnum>>(filters)
+
+  const { filters, selected, setSelected } = useProject()
 
   useEffect(function enableSplide() {
     setLoaded(true)
   }, [])
 
+  useEffect(
+    function updateTotal() {
+      let splide = splideRef.current?.splide
+
+      if (splide) {
+        splide = splide.refresh()
+        setTotal(splide.length)
+        setCurrent(splide.index + 1)
+        // splide.go(0) // IMPORTANT remove if not needed
+      }
+    },
+    [selected]
+  )
+
   function handleSelect(tag: TagEnum) {
+    let list: Array<TagEnum>
+
     if (selected.includes(tag)) {
-      setSelected(selected.filter(t => t !== tag))
+      list = selected.filter(t => t !== tag)
     } else {
-      setSelected([...selected, tag])
+      list = [...selected, tag]
     }
+
+    list.sort()
+
+    setSelected(list)
   }
 
   return (
-    <Card bg={'transparent'} w={'full'} align={'center'} shadow={'none'} className={'project-list'}>
+    <Card bg={'transparent'} w={'full'} align={'center'} shadow={'none'}>
       <Heading size={'lg'} color={'white'} textAlign={'center'}>
         Meus projetos
       </Heading>
@@ -46,11 +67,11 @@ const MyProjects: React.FC = () => {
           </Box>
           ,{' '}
           <Box as={'span'} color={'white'}>
-            mobile{' '}
+            backend{' '}
           </Box>
           e{' '}
           <Box as={'span'} color={'white'}>
-            backend
+            mobile
           </Box>
           .
         </p>
@@ -60,15 +81,20 @@ const MyProjects: React.FC = () => {
         &lt; {current} / {total} &gt;
       </Heading>
 
-      <Card h={'full'}>
+      <Card w={'full'}>
         <Box as={'p'} fontSize={'x-small'} fontWeight={'bold'}>
           Clique para adicionar/remover alguma tecnologia:
         </Box>
 
-        <HStack align={'normal'} spacing={1}>
-          {filters.sort().map(tag => (
-            <Tag key={tag} tag={tag} unselected={!selected.includes(tag)} onRemove={handleSelect} onClick={handleSelect} />
+        <HStack shouldWrapChildren align={'normal'} spacing={1} wrap={'wrap'}>
+          {selected.map(tag => (
+            <Tag key={tag} tag={tag} unselected={false} disabled={selected.length === 1} onRemove={handleSelect} mt={1} />
           ))}
+          {filters
+            .filter(tag => !selected.includes(tag))
+            .map(tag => (
+              <Tag key={tag} tag={tag} unselected={true} onClick={handleSelect} mt={1} />
+            ))}
         </HStack>
 
         {loaded && (
@@ -84,7 +110,12 @@ const MyProjects: React.FC = () => {
               interval: 3000,
               wheel: true,
               rewindByDrag: true,
-              easing: 'cubic-bezier(.42,.65,.27,.99)'
+              easing: 'cubic-bezier(.42,.65,.27,.99)',
+              breakpoints: {
+                768: {
+                  height: 600
+                }
+              }
             }}
             onMounted={splide => setTotal(splide.length)}
             onMove={splide => setCurrent(splide.index + 1)}

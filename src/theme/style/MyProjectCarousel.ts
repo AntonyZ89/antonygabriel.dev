@@ -7,8 +7,11 @@ export default {
     '&.my-project-carousel': {
       w: 'full',
       h: '95%',
+      pb: 10,
+
       '&&__inner': {
         mx: 'auto',
+        pb: { base: 2, md: 0 },
         w: { base: 'full', lg: '70%' },
 
         '> .splide__track': {
@@ -18,10 +21,6 @@ export default {
         '.splide__pagination': {
           mb: '-2em'
         }
-      },
-
-      '> .splide__track': {
-        h: '95%'
       }
     }
   }
