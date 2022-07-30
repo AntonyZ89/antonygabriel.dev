@@ -4,16 +4,17 @@ import NextImage from 'next/image'
 import React from 'react'
 interface MyProjectBaseCarouselProps {
   images: Array<string>
+  className?: string
 }
 
-const MyProjectBaseCarousel: React.FC<MyProjectBaseCarouselProps> = ({ images }) => {
+const MyProjectBaseCarousel: React.FC<MyProjectBaseCarouselProps> = ({ images, className }) => {
   const direction = useBreakpointValue<StackDirection>({ base: 'column', md: 'row' })
 
   return (
     <Flex direction={direction} align={'normal'}>
       <Box p={2} pb={{ base: 0, sm: 2 }} flex={1}>
         <Splide
-          className={'my-project-carousel my-project-carousel__inner'}
+          className={`my-project-carousel my-project-carousel__inner ${className || ''}`}
           options={{
             rewind: true,
             rewindSpeed: 1500,

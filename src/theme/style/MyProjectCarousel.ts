@@ -14,6 +14,10 @@ export default {
         pb: { base: 2, md: 0 },
         w: { base: 'full', lg: '70%' },
 
+        '&__wide': {
+          w: 'full'
+        },
+
         '> .splide__track': {
           h: { base: 'full', lg: '95%' }
         },

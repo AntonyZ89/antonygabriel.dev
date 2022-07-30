@@ -17,8 +17,8 @@ const tags = [TagEnum.ReactJS, TagEnum.NextJS, TagEnum.TypeScript, TagEnum.SASS,
 
 const MyProjectsOrkut: React.FC = () => (
   <MyProjectsBase header={<MyProjectBaseHeader website={'orkut.in-development.tk'}>Orkut</MyProjectBaseHeader>} tags={tags}>
-    <SimpleGrid h={'100%'} autoRows={'0.5fr'} overflow={'hidden'}>
-      <MyProjectBaseCarousel images={images} />
+    <SimpleGrid columns={{ base: 1, md: 2 }} h={'100%'} autoRows={{ base: '0.5fr', md: '1fr' }} overflow={'hidden'}>
+      <MyProjectBaseCarousel className={'my-project-carousel__inner__wide'} images={images} />
       <MyProjectBaseBody>
         <Box as={'p'} textAlign={'center'}>
           Clone da interface do Orkut com um layout mais atual
