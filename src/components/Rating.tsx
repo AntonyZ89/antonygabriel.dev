@@ -8,7 +8,7 @@ interface RatingProps {
 
 const Rating: React.FC<RatingProps> = ({ technology }) => {
   return (
-    <HStack align={'center'}>
+    <HStack align={'center'} spacing={1}>
       <Box>Skill Level</Box>
 
       {[...Array(5)].map((_, index) => {

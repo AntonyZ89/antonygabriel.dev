@@ -17,7 +17,7 @@ const MyProjectsOrkut: React.FC = () => (
   <MyProjectsBase
     direction={'column'}
     header={<MyProjectBaseHeader website={'orkut.in-development.tk'}>Orkut</MyProjectBaseHeader>}
-    tags={[TagEnum.ReactJS, TagEnum.NextJS, TagEnum.TypeScript, TagEnum.SASS]}
+    tags={[TagEnum.ReactJS, TagEnum.NextJS, TagEnum.TypeScript, TagEnum.SASS, TagEnum.Vercel]}
   >
     <MyProjectBaseCarousel images={images} />
     <MyProjectBaseBody>

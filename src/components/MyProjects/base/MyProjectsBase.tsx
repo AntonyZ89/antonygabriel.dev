@@ -1,8 +1,7 @@
-import { Flex, HStack, StackDirection, Tag, useBreakpointValue } from '@chakra-ui/react'
-import { Card } from '@components'
-import { getTagColor, TagEnum } from '@enum'
+import { Flex, HStack, StackDirection, useBreakpointValue } from '@chakra-ui/react'
+import { Card, Tag } from '@components'
+import { TagEnum } from '@enum'
 import { SplideSlide } from '@splidejs/react-splide'
-import { color } from '@utils'
 import React from 'react'
 
 interface MyProjectsBaseProps {
@@ -26,19 +25,7 @@ const MyProjectsBase: React.FC<MyProjectsBaseProps> = ({ children, header, tags,
         </Flex>
         <HStack bg={'gray.900'} align={'normal'} wrap={'wrap'} p={2} spacing={1} h={'32px'}>
           {tags.sort().map(tag => (
-            <Tag
-              key={tag}
-              px={2}
-              py={0.5}
-              size={'xs'}
-              fontSize={'x-small'}
-              fontWeight={'bold'}
-              bg={getTagColor(tag)}
-              color={color.getContrastYIQ(getTagColor(tag) as string)}
-              borderBottom={'1px dotted white'}
-            >
-              {tag}
-            </Tag>
+            <Tag key={tag} tag={tag} />
           ))}
         </HStack>
       </Card>

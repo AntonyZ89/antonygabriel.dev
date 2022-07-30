@@ -35,30 +35,13 @@ const Home: React.FC = () => {
           </HStack>
         </Section>
 
-        <Section pt={24} bg={'gray.600'} color={'whiteAlpha.700'}>
-          <VStack
-            align={'center'}
-            position={'absolute'}
-            top={'10px'}
-            left={'50%'}
-            transform={'translateX(-50%)'}
-            p={2}
-            rounded={'md'}
-            w={{ base: '60%', md: '30%' }}
-          >
-            <Heading fontWeight={'light'} size={'xs'} ml={3}>
-              Resume in progress...
-            </Heading>
-
-            <Spinner size={'sm'} />
-          </VStack>
-
+        <Section bg={'gray.600'} color={'whiteAlpha.700'}>
           <VStack align={'normal'} spacing={4}>
-            <Heading fontWeight={'light'} color={'white'} size={'md'} textAlign={'center'}>
+            <Heading fontWeight={'light'} color={'white'} size={{ base: 'sm', sm: 'md' }} textAlign={'center'}>
               Full Stack Developer | <b>Pleno</b>
             </Heading>
 
-            <VStack align={'normal'} textAlign={'justify'} alignSelf={'center'} fontSize={'md'}>
+            <VStack align={'normal'} textAlign={'justify'} alignSelf={'center'} fontSize={{ base: 'xs', sm: 'sm' }}>
               <Box as={'p'}>
                 Olá! Me chamo Antony, {age} anos, formado em Análise e Desenvolvimento de Sistemas, atuo na área há
                 {' ' + profissionalExperience} anos como desenvolvedor Web e Mobile.

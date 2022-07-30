@@ -1,4 +1,3 @@
-import { useBreakpointValue } from '@chakra-ui/react'
 import { technologies } from '@mocks'
 import { Splide, SplideSlide } from '@splidejs/react-splide'
 import React from 'react'
@@ -10,12 +9,20 @@ const ExperienceCarousel: React.FC = () => (
       rewind: true,
       rewindSpeed: 1500,
       speed: 1000,
+      fixedHeight: 400,
       gap: 10,
-      perPage: useBreakpointValue({ base: 1, md: 2 }),
       arrows: false,
       autoplay: true,
       interval: 3000,
-      wheel: true
+      perPage: 3,
+      breakpoints: {
+        480: {
+          perPage: 1
+        },
+        1280: {
+          perPage: 2
+        }
+      }
     }}
   >
     {technologies.map((technology, index) => (

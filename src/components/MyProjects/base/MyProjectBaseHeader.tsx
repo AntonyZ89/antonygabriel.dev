@@ -1,4 +1,4 @@
-import { As, Box, Heading, HStack, IconButton, IconButtonProps, Tooltip } from '@chakra-ui/react'
+import { As, Flex, Heading, HStack, IconButton, IconButtonProps, Tooltip } from '@chakra-ui/react'
 import { Icon } from '@components'
 import React, { AnchorHTMLAttributes } from 'react'
 import { FaGlobeAmericas } from 'react-icons/fa'
@@ -51,7 +51,15 @@ const Website: React.FC<{ website: string }> = ({ website }) => (
 )
 
 const MyProjectBaseHeader: React.FC<MyProjectBaseHeaderProps> = ({ repository, website, children }) => (
-  <Box bg={'tomato'} py={3} color={'white'} h={'43px'} position={'relative'}>
+  <Flex
+    justify={'center'}
+    direction={'column'}
+    bg={'tomato'}
+    py={0}
+    color={'white'}
+    h={{ base: '45px', sm: '60px', md: '45px' }}
+    position={'relative'}
+  >
     <Heading size={'sm'} fontWeight={'normal'} textAlign={'center'} position={'relative'}>
       {children}
     </Heading>
@@ -60,7 +68,7 @@ const MyProjectBaseHeader: React.FC<MyProjectBaseHeaderProps> = ({ repository, w
       {repository && <Repository repository={repository} />}
       {website && <Website website={website} />}
     </HStack>
-  </Box>
+  </Flex>
 )
 
 export { MyProjectBaseHeader }

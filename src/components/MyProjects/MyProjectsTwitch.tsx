@@ -11,7 +11,7 @@ const MyProjectsTwitch: React.FC = () => (
   <MyProjectsBase
     direction={'column'}
     header={<MyProjectBaseHeader website={'https://twitch-ui-clone.vercel.app'}>Twitch</MyProjectBaseHeader>}
-    tags={[TagEnum.ReactJS, TagEnum.NextJS, TagEnum.TypeScript, TagEnum.SASS]}
+    tags={[TagEnum.ReactJS, TagEnum.NextJS, TagEnum.TypeScript, TagEnum.SASS, TagEnum.Vercel]}
   >
     <MyProjectBaseCarousel images={images} />
     <MyProjectBaseBody>

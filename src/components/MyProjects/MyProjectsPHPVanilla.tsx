@@ -32,9 +32,9 @@ const MyProjectsPHPVanilla: React.FC = () => (
         MVC - PHP Puro
       </MyProjectBaseHeader>
     }
-    tags={[TagEnum.PHP, TagEnum.PHPUnit, TagEnum.HTML, TagEnum.CSS, TagEnum.Bootstrap]}
+    tags={[TagEnum.PHP, TagEnum.PHPUnit, TagEnum.HTML, TagEnum.CSS, TagEnum.Bootstrap, TagEnum.MySQL]}
   >
-    <MyProjectBaseBody flex={1}>
+    <MyProjectBaseBody>
       <Box as={'p'} textAlign={'center'}>
         MVC com PHP puro inspirado no <a href={'https://www.yiiframework.com/'}>Framework Yii2</a>.
       </Box>
