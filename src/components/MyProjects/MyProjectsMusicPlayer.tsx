@@ -32,26 +32,24 @@ const MyProjectsMusicPlayer: React.FC = () => (
 
         <p>As telas e o aplicativo são apenas para demonstração. Não foram feitos os requisitos de funcionalidade.</p>
 
-        <p>
-          <Box as={'ul'} sx={{ '> li': { mb: 2 } }}>
-            <li>
-              <strong>Discover</strong> - Aba com a lista de categorias de músicas, como músicas, álbuns, artistas e mais.
-            </li>
-            <li>
-              <strong>Folders</strong> - Aba com a lista de pastas de músicas.
-            </li>
-            <li>
-              <strong>Genres</strong> - Aba com a lista de gêneros de músicas.
-            </li>
-            <li>
-              <strong>Player</strong> - Tela do player, exibindo a música atual e com opções de play, pause, próxima música, música
-              anterior, tocar aleatoriamente, repetir, volume, favoritos e tempo atual.
-            </li>
-            <li>
-              <strong>Tracks</strong> - Aba com a lista de músicas.
-            </li>
-          </Box>
-        </p>
+        <Box as={'ul'} sx={{ '> li': { mb: 2 } }}>
+          <li>
+            <strong>Discover</strong> - Aba com a lista de categorias de músicas, como músicas, álbuns, artistas e mais.
+          </li>
+          <li>
+            <strong>Folders</strong> - Aba com a lista de pastas de músicas.
+          </li>
+          <li>
+            <strong>Genres</strong> - Aba com a lista de gêneros de músicas.
+          </li>
+          <li>
+            <strong>Player</strong> - Tela do player, exibindo a música atual e com opções de play, pause, próxima música, música anterior,
+            tocar aleatoriamente, repetir, volume, favoritos e tempo atual.
+          </li>
+          <li>
+            <strong>Tracks</strong> - Aba com a lista de músicas.
+          </li>
+        </Box>
       </MyProjectBaseBody>
     </SimpleGrid>
   </MyProjectsBase>

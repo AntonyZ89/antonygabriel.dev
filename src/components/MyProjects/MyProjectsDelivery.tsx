@@ -46,37 +46,35 @@ const MyProjectsDelivery: React.FC = () => (
         </p>
         */}
 
-        <p>
-          <Box as={'ul'} sx={{ '> li': { mb: 2 } }}>
-            <li>
-              <strong>Home</strong> - Tela inicial do aplicativo, listando os produtos disponíveis para compra, com opção de filtrar por
-              nome e categoria.
-            </li>
+        <Box as={'ul'} sx={{ '> li': { mb: 2 } }}>
+          <li>
+            <strong>Home</strong> - Tela inicial do aplicativo, listando os produtos disponíveis para compra, com opção de filtrar por nome
+            e categoria.
+          </li>
 
-            <li>
-              <strong>Produto</strong> - Tela de detalhes do produto, exibindo imagens do produto, nome, descrição, preço, quantidade a ser
-              adicionada ao carrinho e um botão com opção de adicionar ao carrinho.
-            </li>
+          <li>
+            <strong>Produto</strong> - Tela de detalhes do produto, exibindo imagens do produto, nome, descrição, preço, quantidade a ser
+            adicionada ao carrinho e um botão com opção de adicionar ao carrinho.
+          </li>
 
-            <li>
-              <strong>Carrinho</strong> - Tela de carrinho, exibindo os produtos adicionados ao carrinho exibe o valor total do carrinho,
-              com opção de remover o produto do carrinho arrastando para a esquerda, aumentar ou diminuir a quantidade e um botão para
-              finalizar a compra.
-            </li>
-            <li>
-              <strong>Checkout</strong> - Tela de pagamento, exibindo os dados do cliente, com opção de alterar o endereço de entrega,
-              adicionar uma observação ao pedido, alterar a forma de pagamento e um botão para finalizar a compra.
-            </li>
+          <li>
+            <strong>Carrinho</strong> - Tela de carrinho, exibindo os produtos adicionados ao carrinho exibe o valor total do carrinho, com
+            opção de remover o produto do carrinho arrastando para a esquerda, aumentar ou diminuir a quantidade e um botão para finalizar a
+            compra.
+          </li>
+          <li>
+            <strong>Checkout</strong> - Tela de pagamento, exibindo os dados do cliente, com opção de alterar o endereço de entrega,
+            adicionar uma observação ao pedido, alterar a forma de pagamento e um botão para finalizar a compra.
+          </li>
 
-            <li>
-              <strong>Status</strong> - Tela de status do pedido, exibindo o status do pedido e um mapa para localizar o pedido.
-            </li>
+          <li>
+            <strong>Status</strong> - Tela de status do pedido, exibindo o status do pedido e um mapa para localizar o pedido.
+          </li>
 
-            <li>
-              <strong>Pedidos</strong> - Tela de pedidos, exibindo todos os pedidos do cliente com opção de visualizar o pedido.
-            </li>
-          </Box>
-        </p>
+          <li>
+            <strong>Pedidos</strong> - Tela de pedidos, exibindo todos os pedidos do cliente com opção de visualizar o pedido.
+          </li>
+        </Box>
       </MyProjectBaseBody>
     </SimpleGrid>
   </MyProjectsBase>
