@@ -33,7 +33,6 @@ const MyProjects: React.FC = () => {
         splide = splide.refresh()
         setTotal(splide.length)
         setCurrent(splide.index + 1)
-        // splide.go(0) // IMPORTANT remove if not needed
       }
     },
     [selected]
@@ -108,6 +107,7 @@ const MyProjects: React.FC = () => {
               gap: 10,
               arrows: false,
               interval: 3000,
+              height: 600,
               wheel: true,
               rewindByDrag: true,
               easing: 'cubic-bezier(.42,.65,.27,.99)',

@@ -19,7 +19,6 @@ const Tag: React.FC<TagProps> = ({ tag, unselected, disabled, onRemove, onClick,
     py={0.5}
     size={'xs'}
     fontSize={'x-small'}
-    fontWeight={'bold'}
     bg={unselected ? 'gray.300' : getTagColor(tag)}
     color={unselected ? 'gray.500' : color.getContrastYIQ(getTagColor(tag) as string)}
     borderBottom={'1px dotted white'}

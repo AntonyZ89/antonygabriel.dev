@@ -64,10 +64,10 @@ const Home: React.FC = () => {
                 o desenvolvimento de aplicações estudando tecnologias como React, React Native, TypeScript, Flutter, Node, etc.
               </Box>
               <Box as={'p'}>
-                Possuo conhecimento em outras ferramentas como <Highlight>AWS</Highlight>, <Highlight>Google Cloud</Highlight>,{' '}
-                <Highlight>Docker</Highlight>, <Highlight>Heroku</Highlight>, <Highlight>Vercel</Highlight>, <Highlight>Netlify</Highlight>,{' '}
-                <Highlight>Git</Highlight>, <Highlight>GitHub</Highlight>, <Highlight>GitLab</Highlight>, <Highlight>Bitbucket</Highlight>,{' '}
-                <Highlight>Jira</Highlight>, <Highlight>Trello</Highlight>, <Highlight>Slack</Highlight>, <Highlight>ClickUp</Highlight>,
+                Possuo conhecimento em outras ferramentas como <Highlight>AWS</Highlight>, <Highlight>Google Cloud</Highlight>,
+                <Highlight> Docker</Highlight>, <Highlight>Heroku</Highlight>, <Highlight>Vercel</Highlight>, <Highlight>Netlify</Highlight>
+                ,<Highlight> Git</Highlight>, <Highlight>GitHub</Highlight>, <Highlight>GitLab</Highlight>, <Highlight>Bitbucket</Highlight>
+                ,<Highlight> Jira</Highlight>, <Highlight>Trello</Highlight>, <Highlight>Slack</Highlight>, <Highlight>ClickUp</Highlight>,
                 etc.
               </Box>
               <Box as={'p'}>

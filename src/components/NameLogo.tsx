@@ -139,6 +139,7 @@ const NameLogo: React.FC = () => {
           md: '4rem',
           lg: '6rem'
         }}
+        fontWeight={'medium'}
       >
         {subtitle.split('').map((letter, index) => (
           <Letter key={index} letter={letter} selectedIndex={equivalentSubtitleSelected} index={index} />
