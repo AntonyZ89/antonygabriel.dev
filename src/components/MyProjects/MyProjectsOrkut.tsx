@@ -16,7 +16,7 @@ const images = [
 const tags = [TagEnum.ReactJS, TagEnum.NextJS, TagEnum.TypeScript, TagEnum.SASS, TagEnum.Vercel]
 
 const MyProjectsOrkut: React.FC = () => (
-  <MyProjectsBase header={<MyProjectBaseHeader website={'orkut.in-development.tk'}>Orkut</MyProjectBaseHeader>} tags={tags}>
+  <MyProjectsBase header={<MyProjectBaseHeader website={'https://orkut.in-development.tk'}>Orkut</MyProjectBaseHeader>} tags={tags}>
     <SimpleGrid columns={{ base: 1, md: 2 }} h={'100%'} autoRows={{ base: '0.5fr', md: '1fr' }} overflow={'hidden'}>
       <MyProjectBaseCarousel className={'my-project-carousel__inner__wide'} images={images} />
       <MyProjectBaseBody>
