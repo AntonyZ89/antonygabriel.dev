@@ -186,7 +186,7 @@ export default [
     list: [
       {
         name: 'Heroku',
-        experience: '2 ano',
+        experience: '2 anos',
         level: 2
       },
       {
