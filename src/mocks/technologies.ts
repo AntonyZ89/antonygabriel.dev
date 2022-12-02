@@ -22,7 +22,7 @@ export default [
       {
         name: 'VueJS',
         experience: '1 ano',
-        level: 2
+        level: 4
       },
       {
         name: 'SASS',
