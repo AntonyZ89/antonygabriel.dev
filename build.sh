@@ -20,7 +20,7 @@ if [ "$(command -v pm2)" ]; then
 	fi
 
   echo "Starting the application with PM2"
-	pm2 start "$SERVER_FOLDER/index.mjs" --name "portfolio"
+	PORT=3001 pm2 start "$SERVER_FOLDER/index.mjs" --name "portfolio"
 else
   echo "PM2 not found. Starting the application with Node.js"
 	node "$SERVER_FOLDER/index.mjs"
