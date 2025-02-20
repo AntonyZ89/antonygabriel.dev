@@ -28,7 +28,6 @@ export default defineEventHandler(async (event) => {
 <p>Um novo contato foi feito no formulário:</p>
 <p><b>Nome completo</b>: ${body.fullName}</p>
 <p><b>Email</b>: ${body.email}</p>
-<p><b>Assunto</b>: ${body.subject}</p>
 <p><b>Mensagem</b>:</p>
 <p>${body.message}</p>
 `,

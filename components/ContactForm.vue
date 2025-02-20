@@ -4,7 +4,6 @@ import { ref } from 'vue'
 
 const fullName = ref('')
 const email = ref('')
-const subject = ref('')
 const message = ref('')
 const status = ref<{ type: 'error' | 'success', text: string }>()
 const loading = ref(false)
@@ -27,14 +26,12 @@ async function sendContactForm() {
       body: JSON.stringify({
         fullName: fullName.value,
         email: email.value,
-        subject: subject.value,
         message: message.value,
       }),
     })
 
     // clean
     email.value = ''
-    subject.value = ''
     message.value = ''
     fullName.value = ''
 
@@ -54,9 +51,9 @@ async function sendContactForm() {
 
 <template>
   <div class="mt-8 border-t-2 border-nvim-statusbg pt-8">
-    <div class="text-nvim-green text-xl mb-4">
-      :Contato
-    </div>
+    <h1 class="text-nvim-green text-xl mb-4">
+      :Vamos Conversar!
+    </h1>
 
     <p
       v-if="status"
@@ -74,7 +71,7 @@ async function sendContactForm() {
         <label
           class="text-fg text-lg block mb-2"
         >
-          Nome completo
+          Seu nome
         </label>
         <input
           v-model="fullName"
@@ -102,22 +99,6 @@ async function sendContactForm() {
         >
       </div>
 
-      <div>
-        <label
-          class="text-nvim-fg text-lg block mb-2"
-        >
-          Assunto
-        </label>
-        <input
-          v-model="subject"
-          type="text"
-          :disabled="loading"
-          required
-          placeholder=">"
-          class="bg-nvim-bg w-full border-2 border-nvim-green p-2 rounded focus:outline-none focus:ring-2 focus:ring-nvim-green"
-        >
-      </div>
-
       <textarea
         v-model="message"
         :disabled="loading"
@@ -127,7 +108,7 @@ async function sendContactForm() {
       />
 
       <button
-        class="self-start px-6 py-2 bg-nvim-green hover:bg-nvim-darkgreen rounded transition"
+        class="self-start disabled:cursor-not-allowed px-6 py-2 bg-nvim-green hover:bg-nvim-darkgreen rounded transition"
         type="submit"
         :disabled="loading"
       >

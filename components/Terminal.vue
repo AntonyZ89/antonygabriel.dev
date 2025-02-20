@@ -5,7 +5,7 @@
   >
     <div
       ref="terminalContentRef"
-      class="h-40 overflow-y-auto mb-4"
+      class="h-60 overflow-y-auto mb-4"
     >
       <div
         v-for="(line, index) in output"

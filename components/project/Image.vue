@@ -76,7 +76,7 @@ onUnmounted(() => {
         <img
           :src="currentImage"
           alt="Carrossel"
-          class="max-h-[80vh] bg-red-100 mx-auto cursor-pointer object-cover transition-all duration-500"
+          class="max-h-[80vh] bg-nvim-bg mx-auto cursor-pointer object-cover transition-all duration-500"
           @click="nextImage"
         >
       </div>
