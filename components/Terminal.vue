@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex-1 terminal bg-nvim-terminal p-4 rounded-lg border-2 border-nvim-green"
+    class="flex-1 terminal bg-nvim-terminal p-4 border-2 border-nvim-green"
     @click="focusInput"
   >
     <div

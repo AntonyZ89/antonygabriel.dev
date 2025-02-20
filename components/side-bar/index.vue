@@ -1,5 +1,5 @@
 <template>
-  <div class="flex-1 md:flex-[0.3] bg-nvim-treebg p-4 rounded-lg">
+  <div class="flex-1 md:flex-[0.3] bg-nvim-treebg p-4">
     <div class="text-nvim-folder mb-2">
       {{ path }}
     </div>

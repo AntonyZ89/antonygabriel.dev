@@ -21,13 +21,15 @@
       class="ml-3 w-6 text-xl text-nvim-fg bg-gray-400/50 h-full inline-flex items-center justify-center"
       @focus="toggle = true"
       @blur="toggle = false"
+      @mouseenter="toggle = true"
+      @mouseleave="toggle = false"
     >
       <span class="font-bold">
         +
       </span>
 
       <div
-        v-if="toggle"
+        v-show="toggle"
         class="absolute border-b border-r shadow bottom-9 max-w-screen-sm bg-nvim-darkgreen text-white py-1 px-2 text-sm"
       >
         <div class="mb-1 font-bold">

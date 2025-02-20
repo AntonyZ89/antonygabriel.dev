@@ -2,7 +2,7 @@
   <div class="min-h-screen bg-nvim-bg text-nvim-fg font-mono">
     <ActionBar />
 
-    <main class="container mx-auto px-4 py-8">
+    <main class="lg:container mx-auto px-4 py-8">
       <Header />
 
       <div class="flex flex-col md:flex-row gap-8">
@@ -54,7 +54,7 @@
       </div>
 
       <div>
-        <div class="flex flex-col md:flex-row gap-4">
+        <div class="flex flex-col lg:flex-row gap-4">
           <SideBar />
           <Terminal />
         </div>
