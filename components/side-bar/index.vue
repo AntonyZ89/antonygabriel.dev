@@ -10,7 +10,7 @@
       />
       <SideBarFolder
         v-for="project in list"
-        :key="project.id"
+        :key="project.name"
         :="project"
       />
     </ul>

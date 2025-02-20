@@ -5,7 +5,10 @@ const props = defineProps<{
 
 const currentIndex = ref(0)
 const autoSlide = ref(false) // Defina como false se não quiser auto-slide
+const expandImage = ref(false)
 let interval: NodeJS.Timeout | null = null
+
+const currentImage = computed(() => props.images[currentIndex.value])
 
 function nextImage() {
   currentIndex.value = (currentIndex.value + 1) % props.images.length
@@ -38,37 +41,63 @@ onUnmounted(() => {
 
 <template>
   <div class="relative w-full h-full max-w-3xl mx-auto border-2 border-nvim-green rounded overflow-hidden">
-    <!-- Imagem Ativa -->
-    <div class="h-full flex items-center justify-center bg-nvim-bg">
-      <img
-        :src="images[currentIndex]"
+    <div class="h-full w-full flex items-center justify-center bg-nvim-bg">
+      <NuxtImg
+        v-if="!currentImage.endsWith('.gif')"
+        :src="currentImage"
         alt="Carrossel"
-        class="max-w-full max-h-full object-cover transition-all duration-500"
+        class="max-w-full max-h-full object-cover cursor-pointer transition-all duration-500"
+        sizes="600px"
+        quality="80"
+        @click="expandImage = true"
+      />
+      <img
+        v-else
+        :src="currentImage"
+        alt="Carrossel"
+        class="max-w-full max-h-full cursor-pointer object-cover transition-all duration-500"
+        @click="expandImage = true"
       >
     </div>
 
-    <!-- Controles -->
-    <button
-      class="absolute left-2 top-1/2 -translate-y-1/2 text-nvim-green text-2xl bg-nvim-bg px-2 py-1 rounded hover:bg-nvim-darkgreen transition"
-      @click="prevImage"
-    >
-      h
-    </button>
+    <ProjectImageControls
+      :current-index
+      :count="images.length"
+      @prev="prevImage"
+      @next="nextImage"
+    />
 
-    <button
-      class="absolute right-2 top-1/2 -translate-y-1/2 text-nvim-green text-2xl bg-nvim-bg px-2 py-1 rounded hover:bg-nvim-darkgreen transition"
-      @click="nextImage"
+    <div
+      v-if="expandImage"
+      class="z-10 fixed top-0 left-0 w-full h-full bg-nvim-bg/50 transition-all duration-500"
+      @click.self="expandImage = false"
     >
-      l
-    </button>
+      <div class="absolute w-2/3 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+        <img
+          :src="currentImage"
+          alt="Carrossel"
+          class="max-h-[80vh] bg-red-100 mx-auto cursor-pointer object-cover transition-all duration-500"
+          @click="nextImage"
+        >
+      </div>
 
-    <!-- Indicadores -->
-    <div class="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-2">
-      <span
-        v-for="(_, index) in images"
-        :key="index"
-        class="w-3 h-3 rounded-full"
-        :class="index === currentIndex ? 'bg-nvim-green' : 'bg-nvim-statusbg'"
+      <button
+        class="absolute top-6 right-6 size-12 text-nvim-green text-2xl px-2 py-1 bg-nvim-darkgreen/20 flex items-center rounded hover:bg-nvim-darkgreen/50 transition"
+        @click="expandImage = false"
+      >
+        <Icon
+          name="material-symbols:close-rounded"
+          class="size-10"
+        />
+      </button>
+
+      <ProjectImageControls
+        :current-index
+        :count="images.length"
+        y="10vw"
+        size="1.5rem"
+        @prev="prevImage"
+        @next="nextImage"
       />
     </div>
   </div>

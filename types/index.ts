@@ -1,5 +1,4 @@
 type ProjectBase = {
-  id: number
   name: string
 }
 

@@ -1,72 +1,58 @@
 export const technologies = [
   {
-    name: 'JavaScript',
-    class: 'bg-nvim-yellow',
+    ...technology.javascript,
     extra: ['ES6+', 'Node.js', 'Deno', 'Bun'],
   },
   {
-    name: 'PHP',
-    class: 'bg-nvim-purple',
+    ...technology.php,
     extra: ['Laravel', 'Yii 2'],
   },
   {
-    name: 'Python',
-    class: 'bg-nvim-green',
+    ...technology.python,
     extra: ['Django', 'Flask', 'FastAPI'],
   },
   {
-    name: 'React',
-    class: 'bg-nvim-blue',
+    ...technology.react,
     extra: ['Next.js', 'Remix', 'Chakra UI', 'Shadcn UI'],
   },
   {
-    name: 'Mobile',
-    class: 'bg-nvim-blue',
+    ...technology.mobile,
     extra: ['React Native', 'Expo', 'Flutter', 'Ionic'],
   },
   {
-    name: 'Vue.js',
-    class: 'bg-nvim-green',
+    ...technology.vuejs,
     extra: ['Nuxt.js', 'Quasar', 'Vuetify'],
   },
   {
-    name: 'Node.js',
-    class: 'bg-nvim-green',
+    ...technology.nodejs,
     extra: ['Express', 'Fastify', 'Nest.js'],
   },
   {
-    name: 'SQL / NoSQL',
-    class: 'bg-nvim-fg',
+    ...technology.sql_nosql,
     extra: ['MySQL', 'PostgreSQL', 'SQLite', 'MongoDB', 'MariaDB'],
   },
   {
-    name: 'Testes Unitários',
-    class: 'bg-nvim-fg',
+    ...technology.test_unit,
     extra: ['Playwright', 'Cypress', 'Selenium', 'Jest', 'Vitest', 'PHPUnit', 'JUnit'],
   },
   {
-    name: 'Containerização',
-    class: 'bg-nvim-orange',
+    ...technology.container,
     extra: ['Docker', 'Podman', 'Kubernetes'],
   },
   {
-    name: 'Cloud',
-    class: 'bg-nvim-orange',
+    ...technology.cloud,
     extra: ['AWS', 'Google Cloud', 'Azure'],
   },
   {
-    name: 'UI Frameworks',
-    class: 'bg-nvim-cyan',
+    ...technology.ui_frameworks,
     extra: ['TailwindCSS', 'Bootstrap', 'Chakra UI', 'Material UI', 'Shadcn UI', 'DaisyUI'],
   },
   {
-    name: 'APIs',
-    class: 'bg-nvim-red',
+    ...technology.apis,
     extra: ['REST', 'GraphQL', 'gRPC', 'tRPC'],
   },
   {
-    name: 'DevOps',
-    class: 'bg-nvim-yellow',
+    ...technology.devops,
     extra: ['Git Flow', 'CI/CD', 'Github Actions', 'GitLab CI'],
   },
 ]

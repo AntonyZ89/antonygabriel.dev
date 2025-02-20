@@ -5,7 +5,7 @@
     @click="handleClick"
   >
     <span>{{ folder.getIcon(props) }}</span>
-    {{ name }}  <span v-if="type === 'folder' && items!.length">({{ items!.length }})</span>
+    {{ name }}  <span v-if="type === 'folder' && items!.length">({{ count }})</span>
   </li>
 </template>
 
@@ -18,24 +18,27 @@ const props = defineProps<Props>()
 
 const projectStore = useProjectStore()
 
-const isSelected = computed(() => projectStore.selectedProject?.id === props.id)
+const isSelected = computed(() => projectStore.selectedProject?.name === props.name)
+const count = computed(() => projectCount(props))
 
 function handleClick() {
-  if (projectStore.selectedProject?.id === props.id)
+  if (projectStore.selectedProject?.name === props.name) {
+    projectStore.path.pop()
     return
+  }
 
-  if (!projectStore.previousProject) {
+  if (projectStore.selectedProject?.type === 'file' && props.type === 'file') {
     projectStore.path.pop()
   }
 
   if (
     projectStore.selectedProject?.type === 'folder'
     && projectStore.previousProject?.type === 'folder'
-    && projectStore.previousProject.items.some(project => project.id === projectStore.selectedProject!.id)
+    && projectStore.previousProject.items.some(project => project.name === projectStore.selectedProject!.name)
   ) {
     projectStore.path.pop()
   }
 
-  projectStore.path.push(props.id)
+  projectStore.path.push(props.name)
 }
 </script>

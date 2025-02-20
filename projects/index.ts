@@ -1,25 +1,16 @@
-import web from './web'
+import studyCases from './study-cases'
 import sideProjects from './side-projects'
-import mobile from './mobile'
 import type { Project } from '~/types'
 
 export default [
   {
-    id: 1,
     type: 'folder',
-    name: 'web',
-    items: web,
+    name: 'study-cases',
+    items: studyCases,
   },
   {
-    id: 2,
     type: 'folder',
     name: 'side-projects',
     items: sideProjects,
-  },
-  {
-    id: 3,
-    type: 'folder',
-    name: 'mobile',
-    items: mobile,
   },
 ] satisfies Project[]

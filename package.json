@@ -11,22 +11,25 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "eslint:fix": "eslint ."
   },
   "dependencies": {
+    "@nuxt/image": "^1.9.0",
     "@nuxtjs/tailwindcss": "^6.13.1",
     "nodemailer": "^6.10.0",
     "nuxt": "^3.15.4",
-    "nuxt-api-shield": "^0.8.0",
     "vue": "latest",
     "vue-router": "latest",
     "vue-tsc": "^2.1.10"
   },
   "devDependencies": {
     "@iconify-json/logos": "^1.2.4",
+    "@iconify-json/material-symbols": "^1.2.14",
     "@nuxt/eslint": "^1.0.1",
     "@nuxt/icon": "^1.10.3",
     "@pinia/nuxt": "^0.10.1",
-    "@types/nodemailer": "^6.4.17"
+    "@types/nodemailer": "^6.4.17",
+    "nuxt-security": "^2.1.5"
   }
 }

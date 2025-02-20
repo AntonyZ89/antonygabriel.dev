@@ -4,38 +4,36 @@ const env = process.env
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  modules: ['@nuxtjs/tailwindcss', '@pinia/nuxt', '@nuxt/eslint', 'nuxt-api-shield', '@nuxt/icon'],
+  modules: [
+    '@nuxtjs/tailwindcss',
+    '@pinia/nuxt',
+    '@nuxt/eslint',
+    '@nuxt/icon',
+    'nuxt-security',
+    '@nuxt/image',
+  ],
   devtools: { enabled: true },
   runtimeConfig: {
     email: env.GMAIL_EMAIL,
     password: env.GMAIL_PASSWORD,
   },
-  compatibilityDate: '2024-11-01',
-  nitro: {
-    experimental: {
-      tasks: true,
-    },
-    scheduledTasks: {
-      '*/1 * * * *': ['shield:clean'],
-    },
-    storage: {
-      shield: {
-        driver: 'memory',
+  routeRules: {
+    '/api/*': {
+      security: {
+        rateLimiter: {
+          tokensPerInterval: 3,
+          interval: 10000,
+        },
       },
     },
+  },
+  compatibilityDate: '2024-11-01',
+  typescript: {
+    typeCheck: true,
   },
   eslint: {
     config: {
       stylistic: true,
     },
   },
-  nuxtApiShield: {
-    limit: {
-      max: 2,
-      duration: 10,
-      ban: 10,
-    },
-    delayOnBan: false,
-  },
 })
-

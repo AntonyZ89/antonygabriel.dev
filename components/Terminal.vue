@@ -66,7 +66,7 @@ const commands = {
     description: 'Limpa o terminal',
     execute: clearTerminal,
   },
-  projetos: {
+  projects: {
     description: 'Lista todos os projetos',
     execute: listProjects,
   },
@@ -120,16 +120,7 @@ const list = computed(() => {
   return projectStore.projects
 })
 
-const projectsCount = computed(() => {
-  function count(project: Project): number {
-    if (project.type === 'folder') {
-      return project.items.reduce((acc, project) => acc + count(project), 0)
-    }
-    return 1
-  }
-
-  return projectStore.projects.reduce((acc, project) => acc + count(project), 0)
-})
+const count = computed(() => projectStore.projects.reduce((acc, project) => acc + projectCount(project), 0))
 
 /** Functions */
 
@@ -218,7 +209,7 @@ ${getAsciiArt()}
               <div>👤 <span class="text-nvim-blue">Nome:</span> Antony Gabriel</div>
               <div>🏷️ <span class="text-nvim-blue">Título:</span> Desenvolvedor Full-Stack</div>
               <div>🌐 <span class="text-nvim-blue">Stack:</span> Vue.js, Node.js, Python, PHP, TypeScript, React</div>
-              <div>📂 <span class="text-nvim-blue">Projetos:</span> ${projectsCount.value}</div>
+              <div>📂 <span class="text-nvim-blue">Projetos:</span> ${count.value}</div>
             </div>
           </div>
         </div>
@@ -253,7 +244,7 @@ function cd(path: string) {
   }
 
   if (target) {
-    projectStore.path.push(target.id)
+    projectStore.path.push(target.name)
   }
 }
 
@@ -265,7 +256,7 @@ function open(path: string) {
     return
   }
 
-  projectStore.path.push(target.id)
+  projectStore.path.push(target.name)
 }
 
 function historyUp() {

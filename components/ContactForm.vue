@@ -41,7 +41,7 @@ async function sendContactForm() {
     status.value = { type: 'success', text: response.message }
   }
   catch (exception) {
-    console.log(exception)
+    console.error(exception)
     const error = exception as FetchError
 
     status.value = { type: 'error', text: error.message }
@@ -81,6 +81,7 @@ async function sendContactForm() {
           type="text"
           :disabled="loading"
           required
+          placeholder=">"
           class="bg-nvim-bg border-2 border-nvim-green w-full p-2 rounded focus:outline-none focus:ring-2 focus:ring-nvim-green"
         >
       </div>
@@ -96,7 +97,7 @@ async function sendContactForm() {
           type="email"
           :disabled="loading"
           required
-          placeholder="> Email para contato"
+          placeholder=">"
           class="bg-nvim-bg border-2 border-nvim-green w-full p-2 rounded focus:outline-none focus:ring-2 focus:ring-nvim-green"
         >
       </div>
@@ -112,7 +113,7 @@ async function sendContactForm() {
           type="text"
           :disabled="loading"
           required
-          placeholder="> Assunto"
+          placeholder=">"
           class="bg-nvim-bg w-full border-2 border-nvim-green p-2 rounded focus:outline-none focus:ring-2 focus:ring-nvim-green"
         >
       </div>

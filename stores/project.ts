@@ -2,7 +2,7 @@ import type { Project } from '~/types'
 import projects from '~/projects'
 
 type Store = {
-  path: number[]
+  path: string[]
   projects: Project[]
 }
 
@@ -19,10 +19,10 @@ export const useProjectStore = defineStore('project', {
 
       if (!path.length) return null
 
-      let aux = state.projects.find(project => project.id === path[0]) || null
+      let aux = state.projects.find(project => project.name === path[0]) || null
 
       for (let i = 1; i < path.length; i++) {
-        aux = (aux?.type === 'folder' && aux.items.find(project => project.id === path[i])) || null
+        aux = (aux?.type === 'folder' && aux.items.find(project => project.name === path[i])) || null
 
         if (!aux) return null
       }
@@ -37,10 +37,10 @@ export const useProjectStore = defineStore('project', {
 
       if (path.length === 1 && selectedProject?.type === 'file') return null
 
-      let aux = state.projects.find(project => project.id === path[0])
+      let aux = state.projects.find(project => project.name === path[0])
 
       for (let i = 1; i < path.length; i++) {
-        const project = aux?.type === 'folder' && aux.items.find(project => project.id === path[i])
+        const project = aux?.type === 'folder' && aux.items.find(project => project.name === path[i])
 
         if (!project) return null
 
@@ -58,14 +58,14 @@ export const useProjectStore = defineStore('project', {
 
       if (!path.length) return breadCrumbs
 
-      let aux = state.projects.find(project => project.id === path[0])
+      let aux = state.projects.find(project => project.name === path[0])
 
       if (aux) {
         breadCrumbs.push(aux.name)
       }
 
       for (let i = 1; i < path.length; i++) {
-        const project = aux?.type === 'folder' && aux.items.find(project => project.id === path[i])
+        const project = aux?.type === 'folder' && aux.items.find(project => project.name === path[i])
 
         if (!project) return []
 
