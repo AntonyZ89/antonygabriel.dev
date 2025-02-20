@@ -38,6 +38,8 @@
         @keyup.enter="executeCommand"
         @keyup.up="historyUp"
         @keyup.down="historyDown"
+        @keyup.ctrl.c="command = ''"
+        @keydown.tab.prevent="handleAutoComplete"
       >
     </div>
   </div>
@@ -243,9 +245,7 @@ function cd(path: string) {
     return
   }
 
-  if (target) {
-    projectStore.path.push(target.name)
-  }
+  projectStore.select(target)
 }
 
 function open(path: string) {
@@ -256,7 +256,7 @@ function open(path: string) {
     return
   }
 
-  projectStore.path.push(target.name)
+  projectStore.select(target)
 }
 
 function historyUp() {
@@ -300,6 +300,21 @@ function getAsciiArt() {
 ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣦⡀⠄⠹⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇
 ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣄⠘⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇
 `
+}
+
+function handleAutoComplete() {
+  console.log('autocomplete')
+  if (!command.value) return
+const [cmd, ...args] = command.value.split(' ')
+
+  if (!cmd || args.length > 1 || !['cd', 'open'].includes(cmd)) return
+
+const [arg] = args
+
+  const project = list.value.find(project => project.name.toLowerCase().startsWith(arg.toLowerCase()))
+
+  if (project)
+    command.value = cmd + ' ' + project.name
 }
 
 onMounted(() => {

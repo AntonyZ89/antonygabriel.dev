@@ -13,6 +13,10 @@ type Getter = {
 }
 
 export const useProjectStore = defineStore('project', {
+  state: (): Store => ({
+    path: [],
+    projects,
+  }),
   getters: {
     selectedProject(state: Store) {
       const path = state.path
@@ -80,8 +84,26 @@ export const useProjectStore = defineStore('project', {
       return breadCrumbs
     },
   } satisfies Getter,
-  state: (): Store => ({
-    path: [],
-    projects,
-  }),
+  actions: {
+    select(project: Project) {
+      if (this.selectedProject?.name === project.name) {
+        this.path.pop()
+        return
+      }
+
+      if (this.selectedProject?.type === 'file' && project.type === 'file') {
+        this.path.pop()
+      }
+
+      if (
+        this.selectedProject?.type === 'folder'
+        && this.previousProject?.type === 'folder'
+        && this.previousProject.items.some(project => project.name === this.selectedProject!.name)
+      ) {
+        this.path.pop()
+      }
+
+      this.path.push(project.name)
+    },
+  },
 })
