@@ -1,5 +1,5 @@
 <template>
-  <div class="fixed bottom-0 w-full bg-nvim-statusbg h-6 flex items-center pr-4 text-sm">
+  <div class="fixed z-10 bottom-0 w-full bg-nvim-statusbg h-6 flex items-center pr-4 text-sm">
     <span class="mr-4 bg-nvim-terminal px-3 inline-flex items-center h-full">PORTFÓLIO</span>
     <span class="mr-4">main</span>
     <span class="mr-4">|</span>

@@ -4,7 +4,9 @@ export default {
   type: 'file',
   name: 'dating-app',
   description: 'Um aplicativo para encontrar um casal',
-  url: 'https://github.com/AntonyZ89/dating-app',
+  url: {
+    github: 'https://github.com/AntonyZ89/Delivery-App',
+  },
   images: [
     '/images/date-app/login.png',
     '/images/date-app/home.png',

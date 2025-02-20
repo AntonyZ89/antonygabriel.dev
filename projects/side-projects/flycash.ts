@@ -4,7 +4,9 @@ export default {
   type: 'file',
   name: 'FlyCash',
   description: 'flycash',
-  url: '#',
+  url: {
+    website: 'https://flyca.sh',
+  },
   images: [
     '/images/flycash/home.png',
     '/images/flycash/register.png',

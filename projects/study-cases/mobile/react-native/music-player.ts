@@ -4,7 +4,9 @@ export default {
   type: 'file',
   name: 'music-player',
   description: 'Um aplicativo para reprodução de músicas',
-  url: 'https://github.com/AntonyZ89/Music-Player-App',
+  url: {
+    github: 'https://github.com/AntonyZ89/Music-Player-App',
+  },
   images: [
     '/images/music-player/DiscoverTab.png',
     '/images/music-player/FoldersTab.png',

@@ -4,7 +4,9 @@ export default {
   type: 'file',
   name: 'book-store',
   description: 'Um aplicativo para comprar livros',
-  url: 'https://github.com/AntonyZ89/book-store',
+  url: {
+    github: 'https://github.com/AntonyZ89/book-store-app',
+  },
   images: [
     '/images/book-store/HomeScreen.png',
     '/images/book-store/HomeDrawer.png',

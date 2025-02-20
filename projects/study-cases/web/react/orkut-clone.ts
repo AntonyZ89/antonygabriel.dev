@@ -4,7 +4,9 @@ export default {
   type: 'file',
   name: 'orkut-clone',
   description: 'Um aplicativo para compartilhar fotos e vídeos',
-  url: 'https://github.com/AntonyZ89/orkut-clone',
+  url: {
+    github: 'https://orkut.in-development.tk/',
+  },
   images: [
     '/images/orkut/login.png',
     '/images/orkut/my_profile.png',

@@ -4,7 +4,9 @@ export default {
   type: 'file',
   name: 'notepad',
   description: 'Um aplicativo para criação de notas',
-  url: 'https://github.com/AntonyZ89/Notepad-App',
+  url: {
+    github: 'https://github.com/AntonyZ89/NotePad-app',
+  },
   images: [
     '/images/note-pad/app.gif',
     '/images/note-pad/ColorPicker.gif',

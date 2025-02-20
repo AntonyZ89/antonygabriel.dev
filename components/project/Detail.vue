@@ -6,7 +6,7 @@
     <div class="text-nvim-green text-xl mb-4">
       :Projeto
     </div>
-    <div class="flex flex-col lg:flex-row gap-4">
+    <div class="flex flex-col lg:flex-row gap-3">
       <div
         v-if="selectedProject.images!.length > 0"
         class="lg:flex-[0.3] h-[600px]"
@@ -20,7 +20,7 @@
         </div>
       </div>
       <div
-        class="bg-nvim-terminal/50 p-2"
+        class="bg-nvim-terminal/50 p-3 flex flex-col"
         :class="selectedProject.images!.length === 0 ? 'flex-1': 'md:flex-[0.7]'"
       >
         <div
@@ -42,13 +42,35 @@
           </Label>
         </div>
 
-        <a
-          :href="selectedProject.url"
-          class="inline-block px-4 py-2 bg-nvim-darkblue hover:bg-nvim-darkblue !text-white font-bold"
-          target="_blank"
-        >
-          Ver Projeto
-        </a>
+        <div class="space-x-3 flex-1 flex items-end">
+          <a
+            v-if="selectedProject.url?.website"
+            :href="selectedProject.url.website"
+            class="flex gap-2 items-center px-4 py-2 bg-nvim-darkblue hover:bg-nvim-darkblue !text-white font-bold"
+            target="_blank"
+          >
+            <Icon
+              name="material-symbols:globe"
+              class="size-6"
+            />
+
+            Ver Projeto
+          </a>
+
+          <a
+            v-if="selectedProject.url?.github"
+            :href="selectedProject.url.github"
+            class="flex gap-2 items-center px-4 py-2 bg-nvim-darkblue hover:bg-nvim-darkblue !text-white font-bold"
+            target="_blank"
+          >
+            <Icon
+              name="logos:github-icon"
+              class="size-6"
+            />
+
+            Ver Código
+          </a>
+        </div>
       </div>
     </div>
   </div>

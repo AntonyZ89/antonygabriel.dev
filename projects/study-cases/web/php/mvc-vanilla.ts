@@ -4,7 +4,10 @@ export default {
   type: 'file',
   name: 'mvc-vanilla',
   description: 'Um aplicativo MVC simples em PHP',
-  url: 'https://github.com/AntonyZ89/mvc-vanilla',
+  url: {
+    github: 'https://github.com/AntonyZ89/mvc-vanilla',
+    website: 'https://devedor.in-development.tk/',
+  },
   images: [],
   html: `
 <h2>MVC com PHP puro inspirado no <a href="https://www.yiiframework.com/">Framework Yii2</a>.</h2>

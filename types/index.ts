@@ -8,7 +8,10 @@ export type Project = ProjectBase & ({
   images: string[]
   html: string | null
   technologies: Technology[]
-  url: string
+  url: Partial<{
+    github: string
+    website: string
+  }>
   items?: never
 } | {
   type: 'folder'

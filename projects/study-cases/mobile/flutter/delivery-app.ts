@@ -4,7 +4,9 @@ export default {
   type: 'file',
   name: 'delivery-app',
   description: 'Um aplicativo para gerenciar a entrega de produtos',
-  url: 'https://github.com/AntonyZ89/delivery-app',
+  url: {
+    github: 'https://github.com/AntonyZ89/Delivery-App',
+  },
   images: [
     '/images/delivery-app/home.png',
     '/images/delivery-app/product.png',
