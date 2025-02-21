@@ -305,11 +305,11 @@ function getAsciiArt() {
 function handleAutoComplete() {
   console.log('autocomplete')
   if (!command.value) return
-const [cmd, ...args] = command.value.split(' ')
+  const [cmd, ...args] = command.value.split(' ')
 
   if (!cmd || args.length > 1 || !['cd', 'open'].includes(cmd)) return
 
-const [arg] = args
+  const [arg] = args
 
   const project = list.value.find(project => project.name.toLowerCase().startsWith(arg.toLowerCase()))
 
@@ -318,7 +318,6 @@ const [arg] = args
 }
 
 onMounted(() => {
-  focusInput()
   printWelcomeMessage()
 })
 </script>

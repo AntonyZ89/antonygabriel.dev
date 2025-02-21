@@ -12,14 +12,13 @@
               :Sobre Mim
             </div>
             <p class="mb-2 leading-relaxed">
-              Desenvolvedor Full Stack com 6 anos de experiência em tecnologias como PHP, Vue.js,
-              Python e React. Especializado na criação de soluções eficientes e de alta qualidade,
-              tanto no backend quanto no frontend. Tenho experiência em integração de sistemas,
-              desenvolvimento de APIs, automação de processos e otimização de fluxos de trabalho.
+              Desenvolvedor Full Stack com mais de 6 anos de experiência em tecnologias web avançadas.
+              Especialista em <i>Vue.js</i>, <i>React</i>, <i>Angular</i>, <i>PHP</i>, <i>Python</i> e <i>TypeScript</i>, com profundo conhecimento
+              em arquiteturas cloud, Docker, Kubernetes e bancos de dados SQL/NoSQL.
             </p>
             <p class="mb-4 leading-relaxed">
-              Gosto de resolver problemas complexos e garantir que as soluções sejam bem documentadas
-              e fáceis de manter.
+              Formado em Análise e Desenvolvimento de Sistemas, com trajetória em startups inovadoras e empresas
+              de médio e grande porte do setor tecnológico.
             </p>
 
             <div class="text-nvim-green text-xl mb-4">
@@ -69,4 +68,8 @@
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap');
+
+i {
+  @apply text-nvim-green;
+}
 </style>
