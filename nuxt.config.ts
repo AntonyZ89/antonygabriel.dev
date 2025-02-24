@@ -11,8 +11,14 @@ export default defineNuxtConfig({
     '@nuxt/icon',
     'nuxt-security',
     '@nuxt/image',
+    '@nuxtjs/i18n',
   ],
   devtools: { enabled: true },
+  app: {
+    head: {
+      titleTemplate: 'AntonyDev | %s',
+    },
+  },
   runtimeConfig: {
     email: env.GMAIL_EMAIL,
     password: env.GMAIL_PASSWORD,
@@ -35,5 +41,15 @@ export default defineNuxtConfig({
     config: {
       stylistic: true,
     },
+  },
+  i18n: {
+    vueI18n: './i18n.config.ts',
+    defaultLocale: 'en',
+    baseUrl: 'https://antonygabriel.dev',
+    locales: [
+      { code: 'en', language: 'en-US' },
+      { code: 'pt', language: 'pt-BR' },
+      { code: 'es', language: 'es-ES' },
+    ],
   },
 })
