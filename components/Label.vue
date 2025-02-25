@@ -1,6 +1,7 @@
 <template>
   <component
     :is="url ? 'a' : 'span'"
+    ref="selfRef"
     :href="url"
     :target="url ? '_blank' : ''"
     class="h-7 pl-2 relative inline-flex items-center bg-opacity-20"
@@ -30,15 +31,14 @@
 
       <div
         v-show="toggle"
-        class="absolute border-b border-r shadow bottom-9 max-w-screen-sm bg-nvim-darkgreen text-white py-1 px-2 text-sm"
+        ref="toggleRef"
+        class="fixed z-10 border-b border-r shadow bg-nvim-darkgreen text-white py-1 px-2 text-sm"
       >
         <div class="mb-1 font-bold">
-          Tecnologias
+          {{ t('technologies') }}
         </div>
 
-        <span class="text-nvim-fg text-nowrap">
-          {{ extra?.join(', ') }}
-        </span>
+        {{ extra?.join(', ') }}
       </div>
     </button>
   </component>
@@ -51,5 +51,63 @@ defineProps<{
   url?: string
 }>()
 
+const { t } = useI18n()
+
 const toggle = ref(false)
+const selfRef = ref<HTMLDivElement>()
+const toggleRef = ref<HTMLDivElement>()
+
+watch(toggle, async (value) => {
+  if (!value) {
+    toggleRef.value!.style.left = 'inherit'
+    toggleRef.value!.style.right = 'inherit'
+    return
+  }
+
+  await nextTick()
+
+  adjustPosition()
+})
+
+/** Functions */
+
+function adjustPosition() {
+  if (!toggleRef.value) return
+
+  const width = toggleRef.value!.clientWidth
+  const windowWidth = window.innerWidth
+  const toggleX = () => toggleRef.value!.getBoundingClientRect().x
+  const selfY = selfRef.value!.getBoundingClientRect().y
+
+  if (toggleX() < 16) {
+    toggleRef.value!.style.left = '1rem'
+  }
+
+  if (toggleX() + width > windowWidth - 16) {
+    toggleRef.value!.style.right = '1rem'
+
+    if (toggleX() < 16) {
+      toggleRef.value!.style.left = '1rem'
+    }
+  }
+
+  toggleRef.value!.style.top = `${selfY - toggleRef.value!.clientHeight - 4}px`
+}
+
+onMounted(() => {
+  document.addEventListener('scroll', adjustPosition)
+})
+
+onUnmounted(() => {
+  document.removeEventListener('scroll', adjustPosition)
+})
 </script>
+
+<i18n lang="yaml">
+en:
+  technologies: Technologies
+pt:
+  technologies: Tecnologias
+es:
+  technologies: Tecnologías
+</i18n>
