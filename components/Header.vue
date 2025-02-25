@@ -15,8 +15,21 @@
         :AntonyDev
       </h1>
       <div class="text-nvim-blue">
-        > Bem-vindo ao meu ambiente de desenvolvimento profissional <CursorBlink />
+        > 👋 {{ t('welcome') }} <CursorBlink />
       </div>
     </div>
   </header>
 </template>
+
+<script setup lang="ts">
+const { t } = useI18n()
+</script>
+
+<i18n lang="yaml">
+en:
+  welcome: Welcome to my professional development environment
+pt:
+  welcome: Bem-vindo ao meu ambiente de desenvolvimento profissional
+es:
+  welcome: Bienvenido al mio ambiente de desarrollo profesional
+</i18n>

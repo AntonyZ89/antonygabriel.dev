@@ -5,52 +5,7 @@
     <main class="lg:container mx-auto px-4 py-8">
       <Header />
 
-      <div class="flex flex-col md:flex-row gap-8">
-        <div class="md:w-3/4">
-          <div class="mb-8">
-            <div class="text-nvim-green text-xl mb-4">
-              :Sobre Mim
-            </div>
-            <p class="mb-2 leading-relaxed">
-              Desenvolvedor Full Stack com mais de 6 anos de experiência em tecnologias web avançadas.
-              Especialista em <i>Vue.js</i>, <i>React</i>, <i>Angular</i>, <i>PHP</i>, <i>Python</i> e <i>TypeScript</i>, com profundo conhecimento
-              em arquiteturas cloud, Docker, Kubernetes e bancos de dados SQL/NoSQL.
-            </p>
-            <p class="mb-4 leading-relaxed">
-              Formado em Análise e Desenvolvimento de Sistemas, com trajetória em startups inovadoras e empresas
-              de médio e grande porte do setor tecnológico.
-            </p>
-
-            <div class="text-nvim-green text-xl mb-4">
-              :Tecnologias
-            </div>
-
-            <div class="flex flex-wrap gap-x-2 gap-y-4 mb-4">
-              <Label
-                v-for="technology in technologies"
-                :key="technology.name"
-                :="technology"
-              >
-                {{ technology.name }}
-              </Label>
-            </div>
-
-            <div class="text-nvim-green text-xl mb-4">
-              :Redes Sociais
-            </div>
-
-            <div class="flex flex-wrap gap-x-2 gap-y-4">
-              <Label
-                v-for="social in socials"
-                :key="social.name"
-                :="social"
-              >
-                {{ social.name }}
-              </Label>
-            </div>
-          </div>
-        </div>
-      </div>
+      <AboutMe :list="tech_specialists" />
 
       <div>
         <div class="flex flex-col lg:flex-row gap-4">
@@ -69,10 +24,53 @@
 <script lang="ts" setup>
 const i18nHead = useLocaleHead()
 
+const { t } = useI18n()
+
+const tech_specialists = [
+  'Vue.js',
+  'React',
+  'Angular',
+  'PHP',
+  'Python',
+  'TypeScript',
+]
+
+const keywords = [
+  'Full-Stack',
+  'Web',
+  'Front-End',
+  'Back-End',
+  'Cloud',
+  'DevOps',
+  'Docker',
+  'Kubernetes',
+  'SQL',
+  'NoSQL',
+  'Unit Tests',
+  'Containers',
+  'CI/CD',
+  'Git',
+  'GitHub',
+  'GitLab',
+  'AntonyDev',
+  'Portfolio',
+]
+
 useHead({
   htmlAttrs: { lang: i18nHead.value.htmlAttrs!.lang },
 })
 useSeoMeta({
-  title: 'Portfolio',
+  title: t('portfolio'),
+  description: t('description', { list: tech_specialists.join(', ') }),
+  keywords: tech_specialists.concat(keywords).join(', '),
 })
 </script>
+
+<i18n lang="yaml">
+en:
+  description: Full-Stack Developer with more than 6 years of experience in advanced web technologies. Specialist in {list}. With deep knowledge in cloud architectures, Docker, Kubernetes and SQL/NoSQL databases.
+pt:
+  description: Desenvolvedor Full-Stack com mais de 6 anos de experiência em tecnologias web avançadas. Especialista em {list}. Com profundo conhecimento em arquiteturas cloud, Docker, Kubernetes e bancos de dados SQL/NoSQL.
+es:
+  description: Desarrollador Full-Stack con más de 6 años de experiencia en tecnologías web avanzadas. Especialista en {list}. Con profundo conocimiento en arquitecturas en la nube, Docker, Kubernetes y bases de datos SQL/NoSQL.
+</i18n>

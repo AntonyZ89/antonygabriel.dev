@@ -58,7 +58,7 @@ export const useProjectStore = defineStore('project', {
     },
     breadCrumbs(state: Store) {
       const path = state.path
-      const breadCrumbs: string[] = ['projetos']
+      const breadCrumbs: string[] = ['projects']
 
       if (!path.length) return breadCrumbs
 

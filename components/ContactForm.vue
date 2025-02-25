@@ -2,6 +2,8 @@
 import type { FetchError } from 'ofetch'
 import { ref } from 'vue'
 
+const { t } = useI18n()
+
 const fullName = ref('')
 const email = ref('')
 const message = ref('')
@@ -14,7 +16,7 @@ function validateEmail(email: string) {
 
 async function sendContactForm() {
   if (!validateEmail(email.value)) {
-    status.value = { type: 'error', text: 'Email inválido!' }
+    status.value = { type: 'error', text: t('invalid_email') }
     return
   }
 
@@ -52,7 +54,7 @@ async function sendContactForm() {
 <template>
   <div class="mt-8 border-t-2 border-nvim-statusbg pt-8">
     <h1 class="text-nvim-green text-xl mb-4">
-      :Vamos Conversar!
+      :{{ t('lets_talk') }}
     </h1>
 
     <p
@@ -71,7 +73,7 @@ async function sendContactForm() {
         <label
           class="text-fg text-lg block mb-2"
         >
-          Seu nome
+          {{ t('your_name') }}
         </label>
         <input
           v-model="fullName"
@@ -87,7 +89,7 @@ async function sendContactForm() {
         <label
           class="text-nvim-fg text-lg block mb-2"
         >
-          Email
+          {{ t('email') }}
         </label>
         <input
           v-model="email"
@@ -103,7 +105,7 @@ async function sendContactForm() {
         v-model="message"
         :disabled="loading"
         required
-        placeholder="> Mensagem"
+        :placeholder="'> ' + t('message')"
         class="bg-nvim-bg border-2 min-h-32 border-nvim-green p-2 rounded focus:outline-none focus:ring-2 focus:ring-nvim-green"
       />
 
@@ -112,8 +114,32 @@ async function sendContactForm() {
         type="submit"
         :disabled="loading"
       >
-        Enviar
+        {{ t('send') }}
       </button>
     </form>
   </div>
 </template>
+
+<i18n lang="yaml">
+  en:
+    invalid_email: Invalid email
+    lets_talk: Let's talk!
+    your_name: Your name
+    email: E-mail
+    send: Send
+    message: message
+  pt:
+    invalid_email: Email inválido
+    lets_talk: Vamos conversar!
+    your_name: Seu nome
+    email: E-mail
+    send: Enviar
+    message: mensagem
+  es:
+    invalid_email: Email inválido
+    lets_talk: ¡Vamos hablar!
+    your_name: Tu nombre
+    email: Correo electrónico
+    send: Enviar
+    message: mensaje
+</i18n>

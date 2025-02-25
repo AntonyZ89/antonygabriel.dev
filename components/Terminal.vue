@@ -49,6 +49,7 @@
 import type { Project } from '~/types'
 
 const projectStore = useProjectStore()
+const { t } = useI18n()
 
 const command = ref<string>()
 const output = ref<Array<
@@ -61,23 +62,23 @@ const commandHistory = ref<string[]>([])
 const historyIndex = ref(-1)
 const commands = {
   help: {
-    description: 'Exibe esta mensagem de ajuda',
+    description: t('description.help'),
     execute: showHelp,
   },
   clear: {
-    description: 'Limpa o terminal',
+    description: t('description.clear'),
     execute: clearTerminal,
   },
   projects: {
-    description: 'Lista todos os projetos',
+    description: t('description.projects'),
     execute: listProjects,
   },
   neofetch: {
-    description: 'Exibe informações do sistema',
+    description: t('description.neofetch'),
     execute: showNeofetch,
   },
   cd: {
-    description: 'Muda o diretório atual',
+    description: t('description.cd'),
     execute: (args: string[]) => {
       const _args = args.join(' ')
 
@@ -90,7 +91,7 @@ const commands = {
     },
   },
   open: {
-    description: 'Abre um arquivo',
+    description: t('description.open'),
     execute: (args: string[]) => {
       const _args = args.join(' ')
 
@@ -158,7 +159,7 @@ function processCommand(cmd: string) {
   else {
     output.value.push({
       type: 'error',
-      content: `Comando não encontrado: ${baseCommand}`,
+      content: t('command_not_found', [baseCommand]),
     })
   }
 }
@@ -208,10 +209,10 @@ function showNeofetch() {
 ${getAsciiArt()}
             </pre>
             <div>
-              <div>👤 <span class="text-nvim-blue">Nome:</span> Antony Gabriel</div>
-              <div>🏷️ <span class="text-nvim-blue">Título:</span> Desenvolvedor Full-Stack</div>
-              <div>🌐 <span class="text-nvim-blue">Stack:</span> Vue.js, Node.js, Python, PHP, TypeScript, React</div>
-              <div>📂 <span class="text-nvim-blue">Projetos:</span> ${count.value}</div>
+<div>👤 <span class="text-nvim-blue">${t('neofetch.name')}:</span> Antony Gabriel</div>
+<div>🏷️ <span class="text-nvim-blue">${t('neofetch.title')}:</span> Desenvolvedor Full-Stack</div>
+<div>🌐 <span class="text-nvim-blue">${t('neofetch.stack')}:</span> Vue.js, Node.js, Python, PHP, TypeScript, React</div>
+<div>📂 <span class="text-nvim-blue">${t('neofetch.projects')}:</span> ${count.value}</div>
             </div>
           </div>
         </div>
@@ -241,7 +242,7 @@ function cd(path: string) {
   const target = list.value.find(project => project.type === 'folder' && project.name.toLowerCase() === path.toLowerCase())
 
   if (!target) {
-    output.value.push({ type: 'error', content: `Caminho não encontrado: ${path}` })
+    output.value.push({ type: 'error', content: t('path_not_found', [path]) })
     return
   }
 
@@ -252,7 +253,7 @@ function open(path: string) {
   const target = list.value.find(project => project.type === 'file' && project.name.toLowerCase() === path.toLowerCase())
 
   if (!target) {
-    output.value.push({ type: 'error', content: `Arquivo não encontrado: ${path}` })
+    output.value.push({ type: 'error', content: t('file_not_found', [path]) })
     return
   }
 
@@ -282,10 +283,10 @@ function scrollToBottom() {
 function printWelcomeMessage() {
   const welcomeMsg = `
         <p>
-            Bem-vindo ao terminal do portfolio! 
+            ${t('welcome_message_1')}
         </p>
         <p>
-            Digite 'help' para ver os comandos disponíveis.
+            ${t('welcome_message_2')}
         </p>
         _______________________________________________
       `
@@ -336,3 +337,56 @@ pre {
   font-family: 'Fira Code', monospace;
 }
 </style>
+
+<i18n lang="yaml">
+en:
+  welcome_message_1: Welcome to the portfolio terminal!
+  welcome_message_2: Type 'help' to see the available commands.
+  description:
+    help: Shows this message
+    clear: Clears the terminal
+    projects: Lists all projects
+    neofetch: Shows information about the system
+    cd: Changes the current directory
+    open: Opens a file
+  neofetch:
+    name: Name,
+    title: Title,
+    stack: Stack,
+    projects: Projects,
+  command_not_found: 'Command not found: {0}'
+pt:
+  welcome_message_1: Bem-vindo ao terminal do portfolio!
+  welcome_message_2: Digite 'help' para ver os comandos disponíveis.
+  description:
+    help: Exibe esta mensagem de ajuda
+    clear: Limpa o terminal
+    projects: Lista todos os projetos
+    neofetch: Exibe informações do sistema
+    cd: Muda o diretório atual
+    open: Abre um arquivo
+  neofetch:
+    name: Nome,
+    title: Título,
+    stack: Stack,
+    projects: Projetos,
+  command_not_found: 'Comando não encontrado: {0}'
+es:
+  welcome_message_1: Bienvenido al terminal del portfolio!
+  welcome_message_2: Escriba 'help' para ver los comandos disponibles.
+  description:
+    help: Muestra este mensaje
+    clear: Limpia el terminal
+    projects: Lista todos los proyectos
+    neofetch: Muestra información del sistema
+    cd: Cambia el directorio actual
+    open: Abre un archivo
+  neofetch:
+    name: Nombre,
+    title: Título,
+    stack: Stack,
+    projects: Proyectos,
+  command_not_found: 'Comando no encontrado: {0}'
+  path_not_found: 'Ruta no encontrada: {0}'
+  file_not_found: 'Archivo no encontrado: {0}'
+</i18n>

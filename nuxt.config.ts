@@ -47,9 +47,9 @@ export default defineNuxtConfig({
     defaultLocale: 'en',
     baseUrl: 'https://antonygabriel.dev',
     locales: [
-      { code: 'en', language: 'en-US' },
-      { code: 'pt', language: 'pt-BR' },
-      { code: 'es', language: 'es-ES' },
+      { code: 'en', language: 'en-US', name: '🇬🇧 English' },
+      { code: 'pt', language: 'pt-BR', name: '🇧🇷 Português' },
+      { code: 'es', language: 'es-ES', name: '🇪🇸 Español' },
     ],
   },
 })

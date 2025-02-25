@@ -1,4 +1,5 @@
 <template>
+  <LangSwitcher />
   <NuxtPage />
 </template>
 

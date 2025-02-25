@@ -93,11 +93,11 @@ const mysql = {
   icon: 'logos:mysql-icon',
 }
 const test_unit = {
-  name: 'Testes Unitários',
+  name: 'Unit Tests',
   class: 'bg-nvim-fg',
 }
 const container = {
-  name: 'Containerização',
+  name: 'Container',
   class: 'bg-nvim-orange',
 }
 const cloud = {
