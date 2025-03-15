@@ -68,9 +68,9 @@ useSeoMeta({
 
 <i18n lang="yaml">
 en:
-  description: Full-Stack Developer with more than 6 years of experience in advanced web technologies. Specialist in {list}. With deep knowledge in cloud architectures, Docker, Kubernetes and SQL/NoSQL databases.
+  description: Senior Full-Stack Developer with more than 6 years of experience in advanced web technologies. Specialist in {list}. With deep knowledge in cloud architectures, Docker, Kubernetes and SQL/NoSQL databases.
 pt:
-  description: Desenvolvedor Full-Stack com mais de 6 anos de experiência em tecnologias web avançadas. Especialista em {list}. Com profundo conhecimento em arquiteturas cloud, Docker, Kubernetes e bancos de dados SQL/NoSQL.
+  description: Desenvolvedor Full-Stack Senior com mais de 6 anos de experiência em tecnologias web avançadas. Especialista em {list}. Com profundo conhecimento em arquiteturas cloud, Docker, Kubernetes e bancos de dados SQL/NoSQL.
 es:
-  description: Desarrollador Full-Stack con más de 6 años de experiencia en tecnologías web avanzadas. Especialista en {list}. Con profundo conocimiento en arquitecturas en la nube, Docker, Kubernetes y bases de datos SQL/NoSQL.
+  description: Desarrollador Full-Stack Senior con más de 6 años de experiencia en tecnologías web avanzadas. Especialista en {list}. Con profundo conocimiento en arquitecturas en la nube, Docker, Kubernetes y bases de datos SQL/NoSQL.
 </i18n>

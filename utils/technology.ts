@@ -83,6 +83,11 @@ const nodejs = {
   class: 'bg-nvim-green',
   icon: 'logos:nodejs',
 }
+const bun = {
+  name: 'Bun',
+  class: 'bg-nvim-yellow',
+  icon: 'logos:bun',
+}
 const sql_nosql = {
   name: 'SQL / NoSQL',
   class: 'bg-nvim-fg',
@@ -128,6 +133,7 @@ export default {
   mobile,
   vuejs,
   nuxt,
+  bun,
   nodejs,
   sql_nosql,
   test_unit,

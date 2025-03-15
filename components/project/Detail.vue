@@ -4,7 +4,7 @@
     class="mt-8"
   >
     <div class="text-nvim-green text-xl mb-4">
-      :Projeto
+      {{ t('project') }}
     </div>
     <div class="flex flex-col lg:flex-row gap-3">
       <div
@@ -16,7 +16,7 @@
         </div>
 
         <div class="text-center mt-2">
-          clique para expandir
+          {{ t('click to expand') }}
         </div>
       </div>
       <div
@@ -25,11 +25,11 @@
       >
         <div
           class="space-y-3 mb-4"
-          v-html="selectedProject.html"
+          v-html="selectedProject.html[locale]"
         />
 
         <div class="text-nvim-green text-xl mb-4">
-          :Tecnologias
+          {{ t('technologies') }}
         </div>
 
         <div class="flex flex-wrap gap-x-2 gap-y-4 mb-4">
@@ -54,7 +54,7 @@
               class="size-6"
             />
 
-            Ver Projeto
+            {{ t('view project') }}
           </a>
 
           <a
@@ -68,7 +68,7 @@
               class="size-6"
             />
 
-            Ver Código
+            {{ t('view code') }}
           </a>
         </div>
       </div>
@@ -78,6 +78,8 @@
 
 <script setup lang="ts">
 const projectStore = useProjectStore()
+
+const { t, locale } = useI18n()
 
 const show = computed(() => projectStore.selectedProject?.type === 'file')
 const selectedProject = computed(() => projectStore.selectedProject!)
@@ -104,3 +106,29 @@ const selectedProject = computed(() => projectStore.selectedProject!)
   @apply bg-nvim-terminal text-nvim-fg px-1 py-0.5 block;
 }
 </style>
+
+<i18n lang="json">
+{
+  "en": {
+    "project": ":Project",
+    "click to expand": "click to expand",
+    "technologies": ":Technologies",
+    "view project": "View Project",
+    "view code": "View Code"
+  },
+  "pt": {
+    "project": ":Projeto",
+    "click to expand": "clique para expandir",
+    "technologies": ":Tecnologias",
+    "view project": "Ver Projeto",
+    "view code": "Ver Código"
+  },
+  "es": {
+    "project": ":Proyecto",
+    "click to expand": "haga clic para expandir",
+    "technologies": ":Tecnologías",
+    "view project": "Ver Proyecto",
+    "view code": "Ver Código"
+  }
+}
+</i18n>

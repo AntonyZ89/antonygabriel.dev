@@ -1,3 +1,6 @@
+import html_en from './html_en'
+import html_pt from './html_pt'
+import html_es from './html_es'
 import type { Project } from '~/types'
 
 export default {
@@ -14,11 +17,11 @@ export default {
     '/images/note-pad/NoteListScreen.png',
     '/images/note-pad/NoteScreen.gif',
   ],
-  html: `
-<h2>Bloco de notas feito em React Native</h2>
-<p>Bloco de notas desenvolvido para testar a biblioteca UI Framework <a href="https://reactnativeelements.com">React Native Elements</a> com o objetivo de encontrar a melhor opção para desenvolver aplicativos de maneira rápida e eficiente.</p>
-<p>Esse aplicativo permite ao usuário criar notas e organiza-las por cores. Todos os dados são salvos na memória do aplicativo e é utilizado ContextAPI para gerenciar esses dados</p>
-`,
+  html: {
+    en: html_en,
+    pt: html_pt,
+    es: html_es,
+  },
   technologies: [
     technology.javascript,
     technology.react_native,

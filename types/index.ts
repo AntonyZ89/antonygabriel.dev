@@ -6,7 +6,7 @@ export type Project = ProjectBase & ({
   type: 'file'
   description: string
   images: string[]
-  html: string | null
+  html: Record<'pt' | 'en' | 'es', string> | null
   technologies: Technology[]
   url: Partial<{
     github: string

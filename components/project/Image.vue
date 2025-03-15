@@ -42,8 +42,18 @@ onUnmounted(() => {
 <template>
   <div class="relative w-full h-full max-w-3xl mx-auto border-2 border-nvim-green rounded overflow-hidden">
     <div class="h-full w-full flex items-center justify-center bg-nvim-bg">
+      <video
+        v-if="currentImage.endsWith('.mp4')"
+        :src="currentImage"
+        alt="Carrossel"
+        class="max-w-full max-h-full object-cover cursor-pointer transition-all duration-500"
+        autoplay
+        muted
+        controls
+        @click="expandImage = true"
+      />
       <NuxtImg
-        v-if="!currentImage.endsWith('.gif')"
+        v-else-if="!currentImage.endsWith('.gif')"
         :src="currentImage"
         alt="Carrossel"
         class="max-w-full max-h-full object-cover cursor-pointer transition-all duration-500"
@@ -73,7 +83,18 @@ onUnmounted(() => {
       @click.self="expandImage = false"
     >
       <div class="absolute w-2/3 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+        <video
+          v-if="currentImage.endsWith('.mp4')"
+          :src="currentImage"
+          alt="Carrossel"
+          class="max-h-[80vh] bg-nvim-bg mx-auto cursor-pointer object-cover transition-all duration-500"
+          muted
+          autoplay
+          controls
+          @click="nextImage"
+        />
         <img
+          v-else
           :src="currentImage"
           alt="Carrossel"
           class="max-h-[80vh] bg-nvim-bg mx-auto cursor-pointer object-cover transition-all duration-500"
