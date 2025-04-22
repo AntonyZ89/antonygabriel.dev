@@ -49,7 +49,7 @@ const props = defineProps<{
   list: string[]
 }>()
 
-const tech_specialists = `<span class="text-nvim-yellow">[</span>${props.list}<span class="text-nvim-yellow">]</span>`
+const tech_specialists = `<span class="text-nvim-yellow">[</span>${props.list.join(', ')}<span class="text-nvim-yellow">]</span>`
 </script>
 
 <i18n lang="yaml">

@@ -31,5 +31,5 @@ en:
 pt:
   welcome: Bem-vindo ao meu ambiente de desenvolvimento profissional
 es:
-  welcome: Bienvenido al mio ambiente de desarrollo profesional
+  welcome: Bienvenido a mí ambiente de desarrollo profesional
 </i18n>
